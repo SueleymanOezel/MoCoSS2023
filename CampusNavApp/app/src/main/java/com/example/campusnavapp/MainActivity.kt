@@ -48,6 +48,11 @@ class MainActivity : ComponentActivity(), NavigationView.OnNavigationItemSelecte
             }
         }
     }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        // Implement your logic for when a navigation item is selected
+        return true
+    }
+
 
 }
 
