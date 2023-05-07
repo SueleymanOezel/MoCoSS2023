@@ -33,6 +33,9 @@ class MainActivity : ComponentActivity(), NavigationView.OnNavigationItemSelecte
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    // Zeige den Inhalt der App an
+                    HomeContent()
+
                     // Verknüpfe die NavigationView mit dem OnNavigationItemSelectedListener
                     val navigationView = findViewById<NavigationView>(R.id.nav_view)
                     navigationView.setNavigationItemSelectedListener { menuItem ->
@@ -41,31 +44,11 @@ class MainActivity : ComponentActivity(), NavigationView.OnNavigationItemSelecte
                     }
                     // Setze das Home-Element als ausgewählt
                     navigationView.setCheckedItem(R.id.navigation_home)
-
-                    // Zeige den Inhalt der App an
-                    HomeContent()
                 }
             }
         }
     }
 
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Hier kannst du auf die Benutzereingaben reagieren
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                // Der Benutzer hat auf "Home" geklickt
-            }
-            R.id.navigation_profile -> {
-                // Der Benutzer hat auf "Profil" geklickt
-            }
-            R.id.navigation_settings -> {
-                // Der Benutzer hat auf "Einstellungen" geklickt
-            }
-        }
-
-        // Rückgabe true, um zu signalisieren, dass das Element als ausgewählt markiert werden soll
-        return true
-    }
 }
 
 @Composable
