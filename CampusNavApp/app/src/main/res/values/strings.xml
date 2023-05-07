@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CampusNavApp</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_profile">Profile</string>
+    <string name="menu_settings">Settings</string>
+
+</resources>
