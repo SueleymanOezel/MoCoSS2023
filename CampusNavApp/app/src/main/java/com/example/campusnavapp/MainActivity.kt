@@ -24,19 +24,16 @@ class MainActivity : ComponentActivity(), NavigationView.OnNavigationItemSelecte
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Greeting("Android")
+                    // Verknüpfe die NavigationView mit dem OnNavigationItemSelectedListener
+                    val navigationView = findViewById<NavigationView>(R.id.bottom_navigation_view)
+                    navigationView.setNavigationItemSelectedListener { menuItem ->
+                        // Aufruf der Methode onNavigationItemSelected() bei Benutzereingabe
+                        onNavigationItemSelected(menuItem)
+                    }
+                    // Setze das Home-Element als ausgewählt
+                    navigationView.setCheckedItem(R.id.navigation_home)
                 }
             }
-
-            // Verknüpfe die NavigationView mit dem OnNavigationItemSelectedListener
-            val navigationView = findViewById<NavigationView>(R.id.bottom_navigation_view)
-            navigationView.setNavigationItemSelectedListener { menuItem ->
-                // Aufruf der Methode onNavigationItemSelected() bei Benutzereingabe
-                onNavigationItemSelected(menuItem)
-            }
-
-            // Setze das Home-Element als ausgewählt
-            navigationView.setCheckedItem(R.id.navigation_home)
 
         }
     }
@@ -48,7 +45,7 @@ class MainActivity : ComponentActivity(), NavigationView.OnNavigationItemSelecte
                 // Der Benutzer hat auf "Home" geklickt
             }
             R.id.navigation_profile -> {
-                // Der Benutzer hat auf "Einstellungen" geklickt
+                // Der Benutzer hat auf "Profil" geklickt
             }
             R.id.navigation_settings -> {
                 // Der Benutzer hat auf "Einstellungen" geklickt
