@@ -3,7 +3,7 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-
+        maven { url 'https://androidx.compose.ui:ui-tooling' }
     }
 }
 dependencyResolutionManagement {
@@ -11,6 +11,7 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven { url 'https://androidx.compose.ui:ui-tooling' }
     }
 }
 rootProject.name = "CampusNavApp"
