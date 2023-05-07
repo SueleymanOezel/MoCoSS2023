@@ -31,6 +31,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.bottombar.ui.theme.BottombarTheme
 
 
+/*  erbt von ComponentActivity
+    Aufruf von ´setContent()´ in ´onCreate()-Methode´
+    -> Anzeige der ´MainScreen()-Funktion´
+ */
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +45,11 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+/*  Hauptbildschirm -> Navigationsleiste unten i.d. App (Z. 60),
+    Top-Leiste (Z.59) und Navigation (Z. 62)
+
+ */
+
 @Composable
 fun MainScreen() {
 
@@ -55,16 +64,32 @@ fun MainScreen() {
 
 }
 
+/*  Top-Leiste (oben i.d. App)
+    -> enthält den Namen, hier "Bottom Navigation"
+
+ */
+
+
 @Composable
 fun TopBar() {
 
     TopAppBar(
         title = { Text(text = "Bottom Navigation", fontSize = 18.sp) },
-        backgroundColor = Color.Green,
+        backgroundColor = Color.White,
         contentColor = Color.Black
     )
 
 }
+
+
+
+/*  Bottom Navigation Bar -> untere Navigationsleiste
+    enthält die drei Navigationspunkte "Home", "Profil", "Einstellungen"
+    zeigt aktuelles Element an, das ausgewählt wurde
+    Navigation zwischen den Bildschirmen, die mit den Navigationspunkten verknüpft sind
+
+ */
+
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
@@ -75,7 +100,7 @@ fun BottomNavigationBar(navController: NavController) {
         NavigationItem.Einstellungen
     )
     BottomNavigation(
-        backgroundColor = Color.Green,
+        backgroundColor = Color.White,
         contentColor = Color.Black
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -91,7 +116,7 @@ fun BottomNavigationBar(navController: NavController) {
                 },
                 label = { Text(text = items.title) },
                 selectedContentColor = Color.Black,
-                unselectedContentColor = Color.Black.copy(0.4f),
+                unselectedContentColor = Color.Black.copy(1.0f),
                 alwaysShowLabel = true,
                 selected = currentRoute == items.route,
                 onClick = {
@@ -124,8 +149,8 @@ fun HomeScreen() {
     ) {
         Text(
             text = "Home Screen",
-            fontSize = 30.sp,
-            fontWeight = FontWeight.Bold,
+            fontSize = 30.sp,               // Schriftgröße
+            fontWeight = FontWeight.Bold,   // Schriftstärke
             color = Color.Black
         )
 
@@ -168,6 +193,11 @@ fun SettingsScreen() {
 
 }
 
+
+/*
+    Navigationsleiste (NavHost)
+    Navigation zwischen den Bildschrimen
+ */
 
 @Composable
 fun Navigation(navController: NavHostController){
