@@ -7,25 +7,35 @@ import android.provider.ContactsContract.Profile
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
+import androidx.compose.material.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -53,19 +63,30 @@ fun HomeScreen() {
     fun isValidInput(input: String): Boolean {
         return input.length == 4 && input.all { it.isDigit() }
     }
-        // Ein Composable Layout für den HomeScreen
+    // Ein Composable Layout für den HomeScreen
+    Box( // Ein Box-Layout für den Hintergrund
+        modifier = Modifier.fillMaxSize()
+    ) {
+        // Ein Hintergrundbild für den HomeScreen
+        Image(
+            painter = painterResource(id = R.drawable.campus_icon),
+            contentDescription = "Hintergrundbild",
+            modifier = Modifier.fillMaxSize(),
+            contentScale = ContentScale.Crop
+        )
+        // Ein Column-Layout für die restlichen Elemente
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = Color(0xFF8aa3b6)),
+                .background(color = Color(0x80000000)), // Halbtransparentes Schwarz
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Ein Kreisfeld für das Iconbild
+            // Ein Kreisfeld für das Iconbild mit einem Schatten
             Image(
                 painter = painterResource(id = R.drawable.campus_icon),
                 contentDescription = "Iconbild",
-                modifier = Modifier.size(250.dp).padding(30.dp)
+                modifier = Modifier.size(250.dp).padding(30.dp).clip(CircleShape).shadow(10.dp)
             )
 
             // Ein Textfeld für den Appnamen
@@ -73,9 +94,10 @@ fun HomeScreen() {
                 text = "CampusNav",
                 modifier = Modifier.padding(10.dp),
                 style = TextStyle(
-                    fontSize = 20.sp,
+                    fontSize = 30.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black// Babyblau: #89CFF0
+                    color = Color.White,
+                    fontFamily = FontFamily.SansSerif
                 )
             )
 
@@ -83,15 +105,25 @@ fun HomeScreen() {
             // Ein Textfeld für die Wohinabfrage
             Text(
                 text = "Wo willst du hin?",
-                modifier = Modifier.padding(10.dp)
+                modifier = Modifier.padding(10.dp),
+                style = TextStyle(
+                    fontSize = 20.sp,
+                    color = Color.White,
+                    fontFamily = FontFamily.SansSerif
+                )
             )
 
-            // Ein Eingabefeld für den Eingaberaum mit einer Tastatur für Zahlen
+            // Ein Eingabefeld für den Eingaberaum mit einer Tastatur für Zahlen und einem Rahmen
             TextField(
                 value = eingabeRaum.value,
                 onValueChange = { eingabeRaum.value = it },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
-                modifier = Modifier.padding(10.dp).width(150.dp)
+                modifier = Modifier.padding(10.dp).width(150.dp).border(2.dp, Color.White, RoundedCornerShape(10.dp)),
+                colors = TextFieldDefaults.textFieldColors(
+                    backgroundColor = Color.Transparent,
+                    textColor = Color.White,
+                    cursorColor = Color.White
+                )
             )
 
             // Ein Button für die Bestätigung des Raums mit einer Validierung der Eingabe
@@ -100,11 +132,17 @@ fun HomeScreen() {
                     if (isValidInput(eingabeRaum.value)) {
                         startNextActivity(eingabeRaum.value, context)
                     }
-                }
+                },
+                colors = ButtonDefaults.buttonColors(
+                    backgroundColor = Color.Gray,
+                    contentColor = Color.White
+                )
             ) {
                 Text(text = "Bestätigung des Raums")
             }
 
         }
     }
+}
+
 
