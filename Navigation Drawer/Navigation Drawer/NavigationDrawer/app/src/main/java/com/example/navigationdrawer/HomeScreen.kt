@@ -1,4 +1,4 @@
-package com.example.bottombar
+package com.example.navigationdrawer
 
 import android.content.ContentValues.TAG
 import android.content.Context
@@ -143,5 +143,3 @@ fun HomeScreen() {
         }
     }
 }
-
-
