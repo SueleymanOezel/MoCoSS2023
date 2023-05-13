@@ -107,15 +107,15 @@ fun ProfileScreen(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text(text = "Profil") },
+                title = { Text(text = "Profil", style = TextStyle(fontSize = 30.sp, fontWeight = FontWeight.Bold, color = Color.White, fontFamily = FontFamily.SansSerif)) },
+                backgroundColor = Color(0xFF89CFF0), // Babyblau
                 actions = {
                     // Ein Button zum Wechseln des Bearbeitungsmodus
-
                     IconButton(onClick = { editMode.value = !editMode.value }) {
                         Icon(
                             painter = painterResource(id = R.drawable.ic_edit), // Das Icon muss in den drawable Ordner gelegt werden
-
-                            contentDescription = "Edit"
+                            contentDescription = "Edit",
+                            tint = Color.White // Weißes Icon
                         )
                     }
                 }
