@@ -234,7 +234,7 @@ fun ProfileScreen(navController: NavController) {
                             onClick =
                             { // Hier kann die Logik zum Speichern des neuen Passworts implementiert werden (z.B. mit einer Datenbank- oder SharedPreferences-Aktivität) // Wenn das Speichern erfolgreich ist, wird der Bearbeitungsmodus beendet und die Fehlermeldung geleert // Wenn das Speichern fehlschlägt, wird eine Fehlermeldung angezeigt editMode.value =
                                 false
-                                ""
+                                errorMessage.value = ""
                             },
                             modifier =
                             Modifier.fillMaxWidth().height(50.dp),
