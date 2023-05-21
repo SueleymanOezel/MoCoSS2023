@@ -1,0 +1,343 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+MERGED from [androidx.compose.material:material-ripple:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\67f645079595ebae2200f50f99b80065\transformed\material-ripple-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-icons-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e16fecfc7e82de4c180a48d571e350c7\transformed\material-icons-core-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-compose:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\b6fe90f0b97fc0437b5416e4457e1be1\transformed\navigation-compose-2.5.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.compose.animation:animation-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\84d90a38034ad0abb73868ccc637136f\transformed\animation-core-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.animation:animation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\ccf1a1458c5fb2db5b2a5c3e213a3545\transformed\animation-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e1efb9540d382b8cbe27012fac441ad0\transformed\foundation-layout-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.foundation:foundation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a2b782a46245985e203462049d7bcd27\transformed\foundation-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\777d0e17c9f25c4484e2bd6e0d0b2670\transformed\ui-tooling-data-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\90838461fdcee138c3c1b9aac32eb055\transformed\ui-tooling-preview-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.ui:ui-util:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\28695722b7490fcf4805643fcbce5174\transformed\ui-util-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-unit:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\3b2254322ebaa44e2da48469f90eab4d\transformed\ui-unit-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-text:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a848b1bee109fe25d237e417bcbe7089\transformed\ui-text-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-graphics:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1d6cf76613b880439179d22751fdb200\transformed\ui-graphics-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-geometry:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\703d0164293d8a7a93d98cd4753f70b0\transformed\ui-geometry-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.compose.material:material:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1b24f9545a7bfea852ee184869bd8a4d\transformed\material-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d5bc98ab0037aa4d4e56959ad3d6bd33\transformed\navigation-runtime-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a77512a778820deb8fe87e0c18a3f6f2\transformed\navigation-runtime-2.5.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\70b709983b14f6e7e18ab87bce9cb163\transformed\activity-1.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\95cb2ec5420f3d5bb0deb41eb6d781c1\transformed\activity-compose-1.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-ktx:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\6cde7136f529eee7bdd188f2530f7ed8\transformed\activity-ktx-1.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\c227497ea3a10b0740a844d6e70cdeac\transformed\navigation-common-ktx-2.5.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\06517b146b1545cec9a35042752b15f0\transformed\navigation-common-2.5.3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\4c51ee24b781e8aebfe3239b3018971a\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\145ef263599e9c8470b51a529d41ea2b\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\994dc949637389b6a4437f012efada45\transformed\lifecycle-viewmodel-ktx-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\748a2e4e147d34d0f723e8b964444c08\transformed\lifecycle-runtime-ktx-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\190c92b935f3b2d10ac08f42b37b38f1\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\42cc6e4854fbd140a3806949723b816a\transformed\savedstate-1.2.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\cefd8d9d89261c4885f71b696bec2eec\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\986faeba920e2c6d64a648372c624449\transformed\autofill-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\4a1643c1d737a54ab33909bd1b41a843\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\aaaeca4f5586f67d9cb6d67f54c4aa35\transformed\core-ktx-1.9.0\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\055eccb1ab314aaa7d98d25ab7c3fd7c\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\40ecec86033b400edc5322f6b5bbc46b\transformed\lifecycle-viewmodel-compose-2.6.1\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\148aa1d3becc8e05be9281046428495c\transformed\ui-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\439b15e13e5cc0649e56a4cb5e5ad00c\transformed\runtime-saveable-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d7bb6636e2b928157a41c74f38f46555\transformed\runtime-1.4.3\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\59800e5cde54103ecdddad4cf90d9760\transformed\core-runtime-2.2.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\998a1b9f98cb51a9ac00f5d943d83bb2\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\210911025f34ccb869bf1b9876fe149c\transformed\tracing-1.0.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\7e37901b931b8b0178a9051525157861\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+	package
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:1-28:12
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:5:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:28:5-89
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\998a1b9f98cb51a9ac00f5d943d83bb2\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\998a1b9f98cb51a9ac00f5d943d83bb2\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:10:9-41
+	android:fullBackupContent
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:8:9-54
+	android:roundIcon
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:11:9-54
+	tools:targetApi
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:14:9-29
+	android:icon
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:13:9-47
+	android:dataExtractionRules
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:7:9-65
+activity#com.example.bottombar.MainActivity
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:15:9-25:20
+	android:label
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:18:13-45
+	android:exported
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:17:13-36
+	android:theme
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:19:13-51
+	android:name
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:16:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:20:13-24:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:21:17-69
+	android:name
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:21:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:23:17-77
+	android:name
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml:23:27-74
+uses-sdk
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+MERGED from [androidx.compose.material:material-ripple:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\67f645079595ebae2200f50f99b80065\transformed\material-ripple-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-ripple:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\67f645079595ebae2200f50f99b80065\transformed\material-ripple-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-icons-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e16fecfc7e82de4c180a48d571e350c7\transformed\material-icons-core-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-icons-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e16fecfc7e82de4c180a48d571e350c7\transformed\material-icons-core-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-compose:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\b6fe90f0b97fc0437b5416e4457e1be1\transformed\navigation-compose-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-compose:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\b6fe90f0b97fc0437b5416e4457e1be1\transformed\navigation-compose-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.compose.animation:animation-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\84d90a38034ad0abb73868ccc637136f\transformed\animation-core-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation-core:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\84d90a38034ad0abb73868ccc637136f\transformed\animation-core-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\ccf1a1458c5fb2db5b2a5c3e213a3545\transformed\animation-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.animation:animation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\ccf1a1458c5fb2db5b2a5c3e213a3545\transformed\animation-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e1efb9540d382b8cbe27012fac441ad0\transformed\foundation-layout-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation-layout:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\e1efb9540d382b8cbe27012fac441ad0\transformed\foundation-layout-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a2b782a46245985e203462049d7bcd27\transformed\foundation-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.foundation:foundation:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a2b782a46245985e203462049d7bcd27\transformed\foundation-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\777d0e17c9f25c4484e2bd6e0d0b2670\transformed\ui-tooling-data-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-data:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\777d0e17c9f25c4484e2bd6e0d0b2670\transformed\ui-tooling-data-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\90838461fdcee138c3c1b9aac32eb055\transformed\ui-tooling-preview-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\90838461fdcee138c3c1b9aac32eb055\transformed\ui-tooling-preview-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\28695722b7490fcf4805643fcbce5174\transformed\ui-util-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-util:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\28695722b7490fcf4805643fcbce5174\transformed\ui-util-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-unit:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\3b2254322ebaa44e2da48469f90eab4d\transformed\ui-unit-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-unit:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\3b2254322ebaa44e2da48469f90eab4d\transformed\ui-unit-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a848b1bee109fe25d237e417bcbe7089\transformed\ui-text-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-text:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a848b1bee109fe25d237e417bcbe7089\transformed\ui-text-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1d6cf76613b880439179d22751fdb200\transformed\ui-graphics-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-graphics:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1d6cf76613b880439179d22751fdb200\transformed\ui-graphics-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-geometry:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\703d0164293d8a7a93d98cd4753f70b0\transformed\ui-geometry-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-geometry:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\703d0164293d8a7a93d98cd4753f70b0\transformed\ui-geometry-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1b24f9545a7bfea852ee184869bd8a4d\transformed\material-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\1b24f9545a7bfea852ee184869bd8a4d\transformed\material-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d5bc98ab0037aa4d4e56959ad3d6bd33\transformed\navigation-runtime-ktx-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d5bc98ab0037aa4d4e56959ad3d6bd33\transformed\navigation-runtime-ktx-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a77512a778820deb8fe87e0c18a3f6f2\transformed\navigation-runtime-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\a77512a778820deb8fe87e0c18a3f6f2\transformed\navigation-runtime-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\70b709983b14f6e7e18ab87bce9cb163\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\70b709983b14f6e7e18ab87bce9cb163\transformed\activity-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\95cb2ec5420f3d5bb0deb41eb6d781c1\transformed\activity-compose-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\95cb2ec5420f3d5bb0deb41eb6d781c1\transformed\activity-compose-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\6cde7136f529eee7bdd188f2530f7ed8\transformed\activity-ktx-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-ktx:1.7.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\6cde7136f529eee7bdd188f2530f7ed8\transformed\activity-ktx-1.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\c227497ea3a10b0740a844d6e70cdeac\transformed\navigation-common-ktx-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\c227497ea3a10b0740a844d6e70cdeac\transformed\navigation-common-ktx-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\06517b146b1545cec9a35042752b15f0\transformed\navigation-common-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.5.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\06517b146b1545cec9a35042752b15f0\transformed\navigation-common-2.5.3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\4c51ee24b781e8aebfe3239b3018971a\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\4c51ee24b781e8aebfe3239b3018971a\transformed\savedstate-ktx-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\145ef263599e9c8470b51a529d41ea2b\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\145ef263599e9c8470b51a529d41ea2b\transformed\lifecycle-livedata-core-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\994dc949637389b6a4437f012efada45\transformed\lifecycle-viewmodel-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\994dc949637389b6a4437f012efada45\transformed\lifecycle-viewmodel-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\748a2e4e147d34d0f723e8b964444c08\transformed\lifecycle-runtime-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\748a2e4e147d34d0f723e8b964444c08\transformed\lifecycle-runtime-ktx-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\190c92b935f3b2d10ac08f42b37b38f1\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\190c92b935f3b2d10ac08f42b37b38f1\transformed\lifecycle-viewmodel-savedstate-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\42cc6e4854fbd140a3806949723b816a\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\42cc6e4854fbd140a3806949723b816a\transformed\savedstate-1.2.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\cefd8d9d89261c4885f71b696bec2eec\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\cefd8d9d89261c4885f71b696bec2eec\transformed\lifecycle-viewmodel-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\986faeba920e2c6d64a648372c624449\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\986faeba920e2c6d64a648372c624449\transformed\autofill-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\4a1643c1d737a54ab33909bd1b41a843\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\4a1643c1d737a54ab33909bd1b41a843\transformed\customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\aaaeca4f5586f67d9cb6d67f54c4aa35\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\aaaeca4f5586f67d9cb6d67f54c4aa35\transformed\core-ktx-1.9.0\AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\055eccb1ab314aaa7d98d25ab7c3fd7c\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\055eccb1ab314aaa7d98d25ab7c3fd7c\transformed\lifecycle-runtime-2.6.1\AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\40ecec86033b400edc5322f6b5bbc46b\transformed\lifecycle-viewmodel-compose-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\40ecec86033b400edc5322f6b5bbc46b\transformed\lifecycle-viewmodel-compose-2.6.1\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\148aa1d3becc8e05be9281046428495c\transformed\ui-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\148aa1d3becc8e05be9281046428495c\transformed\ui-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\439b15e13e5cc0649e56a4cb5e5ad00c\transformed\runtime-saveable-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\439b15e13e5cc0649e56a4cb5e5ad00c\transformed\runtime-saveable-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d7bb6636e2b928157a41c74f38f46555\transformed\runtime-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\d7bb6636e2b928157a41c74f38f46555\transformed\runtime-1.4.3\AndroidManifest.xml:20:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:21:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\59800e5cde54103ecdddad4cf90d9760\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\59800e5cde54103ecdddad4cf90d9760\transformed\core-runtime-2.2.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\998a1b9f98cb51a9ac00f5d943d83bb2\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\998a1b9f98cb51a9ac00f5d943d83bb2\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\210911025f34ccb869bf1b9876fe149c\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\210911025f34ccb869bf1b9876fe149c\transformed\tracing-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\7e37901b931b8b0178a9051525157861\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\7e37901b931b8b0178a9051525157861\transformed\annotation-experimental-1.3.0\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\HP Spectre\Desktop\Uni\Kurse\Moco_SS\MoCoSS2023\Navigation Bar\Bottombar\Bottombar\app\src\main\AndroidManifest.xml
+activity#androidx.activity.ComponentActivity
+ADDED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-test-manifest:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5d536e6cbcabb59db9538cd7814782dd\transformed\ui-test-manifest-1.4.3\AndroidManifest.xml:24:13-63
+activity#androidx.compose.ui.tooling.PreviewActivity
+ADDED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:23:9-25:39
+	android:exported
+		ADDED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:25:13-36
+	android:name
+		ADDED from [androidx.compose.ui:ui-tooling:1.4.3] C:\Users\HP Spectre\.gradle\caches\transforms-3\5398ef967c0f45008f646d46ac192cec\transformed\ui-tooling-1.4.3\AndroidManifest.xml:24:13-71
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\65c0cc44a4bcb07fb7ab36e6fb74e85b\transformed\startup-runtime-1.1.1\AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\9949b0cafaa6026eada11329af734fbc\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.6.1] C:\Users\HP Spectre\.gradle\caches\transforms-3\bf86795ec14eed6de5da8d46a61be661\transformed\lifecycle-process-2.6.1\AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+permission#com.example.bottombar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+uses-permission#com.example.bottombar.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.9.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\3e05c9da3c1df880b1177e12faa5979a\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\HP Spectre\.gradle\caches\transforms-3\8565824f5fcb8ba160636de7eefec859\transformed\profileinstaller-1.3.0\AndroidManifest.xml:50:25-92
