@@ -1,6 +1,10 @@
 package com.example.navigationdrawer
 
 
+/*import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text*/
+// import com.example.navigationdrawer.ui.theme.Screens.startNextActivity
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
@@ -18,17 +22,11 @@ import androidx.camera.view.PreviewView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
+import androidx.compose.material.Card
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
@@ -41,11 +39,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
-/*import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text*/
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -69,7 +63,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -79,22 +72,17 @@ import androidx.navigation.compose.rememberNavController
 import com.example.navigationdrawer.database.Building
 import com.example.navigationdrawer.database.Profile
 import com.example.navigationdrawer.database.Room
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.launch
-import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
 import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
-// import com.example.navigationdrawer.ui.theme.Screens.startNextActivity
 import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
+import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.FirebaseFirestoreSettings
 import com.google.firebase.firestore.SetOptions
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
-import java.lang.Exception
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.items
-import androidx.compose.material.Card
 
 
 class MainActivity : ComponentActivity() {
@@ -102,16 +90,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         // Initialize Firebase
         FirebaseApp.initializeApp(this)
-        // Get a Firestore instance
-        val db = FirebaseFirestore.getInstance()
-        // Configure Firestore settings
-        db.firestoreSettings = FirebaseFirestoreSettings.Builder()
-            .setPersistenceEnabled(true)
-            .build()
-        // Save the Firestore instance as a property of this class
-        var firestore = db
+        // Get a Firestore instance using the FirestoreUtil singleton
+        val firestore = FirestoreUtil.firestore
+
         setContent {
-           /* Column(
+            /* Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -125,15 +108,26 @@ class MainActivity : ComponentActivity() {
                 }
 
             */
-                MainScreen()
-            }
-        }
-        companion object {
-            // A property to access the Firestore instance from other classes
-            lateinit var firestore: FirebaseFirestore
-                private set
+            MainScreen()
         }
     }
+
+    object FirestoreUtil {
+        private var firestoreInstance: FirebaseFirestore? = null
+
+        val firestore: FirebaseFirestore
+            get() {
+                if (firestoreInstance == null) {
+                    firestoreInstance = FirebaseFirestore.getInstance()
+                    // Configure Firestore settings
+                    firestoreInstance?.firestoreSettings = FirebaseFirestoreSettings.Builder()
+                        .setPersistenceEnabled(true)
+                        .build()
+                }
+                return firestoreInstance as FirebaseFirestore
+            }
+    }
+}
 //}
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -981,10 +975,7 @@ abstract class DatabaseDao {
 }
 
 // A concrete class that implements the methods for the data access layer using Firestore
-class FirestoreDao : DatabaseDao() {
-
-    // A property to access the Firestore instance
-    private val db = MainActivity.firestore
+class FirestoreDao(private val db: FirebaseFirestore) : DatabaseDao() {
 
     // A property to access the Firebase Authentication instance
     private val auth = FirebaseAuth.getInstance()
@@ -992,6 +983,7 @@ class FirestoreDao : DatabaseDao() {
     // A property to get the current user's ID or null if not logged in
     private val userId: String?
         get() = auth.currentUser?.uid
+
 
     override suspend fun getProfile(): Profile? {
         return userId?.let { id ->
