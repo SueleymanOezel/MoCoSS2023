@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -79,3 +80,35 @@ dependencies {
     // Zxing
     implementation 'com.google.zxing:core:3.3.3'
 }
+
+dependencies {
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+
+    // Declare the dependencies for the Firebase Authentication and Cloud Firestore SDKs
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Declare the dependency for the Firebase Performance Monitoring SDK
+    implementation 'com.google.firebase:firebase-perf'
+}
+
+dependencies {
+    implementation 'androidx.wear.tiles:tiles-material:1.1.0-alpha04'
+    // Import the BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.0.3')
+
+    // Declare the dependencies for the Firebase Authentication and Cloud Firestore SDKs
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth'
+    implementation 'com.google.firebase:firebase-firestore'
+
+    // Declare the dependency for the Firebase Performance Monitoring SDK
+    implementation 'com.google.firebase:firebase-perf'
+
+    // Add this line to use the await() function for Firebase tasks
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.1.1'
+}
+
+// Project Structure zum versionen kontrolle
