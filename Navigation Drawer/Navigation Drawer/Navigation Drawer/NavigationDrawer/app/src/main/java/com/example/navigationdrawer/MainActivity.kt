@@ -1,7 +1,12 @@
 package com.example.navigationdrawer
 
 
+/*import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text*/
+// import com.example.navigationdrawer.ui.theme.Screens.startNextActivity
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Size
@@ -17,29 +22,24 @@ import androidx.camera.view.PreviewView
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Button
+import androidx.compose.material.Card
 import androidx.compose.material.DrawerValue
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.rememberDrawerState
 import androidx.compose.material.rememberScaffoldState
-/*import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text*/
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -63,26 +63,38 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.LifecycleOwner
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.navigationdrawer.database.Building
+import com.example.navigationdrawer.database.Profile
+import com.example.navigationdrawer.database.Room
+import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
+import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
+import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.FirebaseFirestoreSettings
+import com.google.firebase.firestore.SetOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
-import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
-import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
-// import com.example.navigationdrawer.ui.theme.Screens.startNextActivity
-import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
-import java.lang.Exception
+import kotlinx.coroutines.tasks.await
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this)
+        // Get a Firestore instance using the FirestoreUtil singleton
+        val firestore = FirestoreUtil.firestore
+
         setContent {
-           /* Column(
+            /* Column(
                 modifier = Modifier.fillMaxSize(),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -96,12 +108,29 @@ class MainActivity : ComponentActivity() {
                 }
 
             */
-                MainScreen()
-            }
+            MainScreen()
         }
     }
+
+    object FirestoreUtil {
+        private var firestoreInstance: FirebaseFirestore? = null
+
+        val firestore: FirebaseFirestore
+            get() {
+                if (firestoreInstance == null) {
+                    firestoreInstance = FirebaseFirestore.getInstance()
+                    // Configure Firestore settings
+                    firestoreInstance?.firestoreSettings = FirebaseFirestoreSettings.Builder()
+                        .setPersistenceEnabled(true)
+                        .build()
+                }
+                return firestoreInstance as FirebaseFirestore
+            }
+    }
+}
 //}
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(){
 
@@ -117,7 +146,6 @@ fun MainScreen(){
         }
     ) {
         Navigation(navController = navController)
-
     }
 }
 
@@ -927,3 +955,185 @@ class MainActivity : ComponentActivity() {
 }
 
 */
+
+
+// An abstract class that defines the methods for the data access layer
+abstract class DatabaseDao {
+
+    // A method to get the current user's profile
+    abstract suspend fun getProfile(): Profile?
+
+    // A method to update the current user's profile
+    abstract suspend fun updateProfile(profile: Profile)
+
+    // A method to get a list of rooms by building number
+    abstract suspend fun getRoomsByBuilding(buildingNr: Int): List<Room>
+
+    // A method to get a list of buildings
+    abstract suspend fun getBuildings(): List<Building>
+
+}
+
+// A concrete class that implements the methods for the data access layer using Firestore
+class FirestoreDao(private val db: FirebaseFirestore) : DatabaseDao() {
+
+    // A property to access the Firebase Authentication instance
+    private val auth = FirebaseAuth.getInstance()
+
+    // A property to get the current user's ID or null if not logged in
+    private val userId: String?
+        get() = auth.currentUser?.uid
+
+
+    override suspend fun getProfile(): Profile? {
+        return userId?.let { id ->
+            // Get the document reference for the user's profile
+            val docRef = db.collection("profiles").document(id)
+            try {
+                // Get the document snapshot and convert it to a Profile object
+                val snapshot = docRef.get().await()
+                snapshot.toObject(Profile::class.java)
+            } catch (e: Exception) {
+                // Handle any errors and return null if something went wrong
+                e.printStackTrace()
+                null
+            }
+        }
+    }
+
+    override suspend fun updateProfile(profile: Profile) {
+        userId?.let { id ->
+            // Get the document reference for the user's profile
+            val docRef = db.collection("profiles").document(id)
+            try {
+                // Set the profile data on the document with merge option
+                docRef.set(profile, SetOptions.merge()).await()
+            } catch (e: Exception) {
+                // Handle any errors and rethrow them if something went wrong
+                e.printStackTrace()
+                throw e
+            }
+        }
+    }
+
+    override suspend fun getRoomsByBuilding(buildingNr: Int): List<Room> {
+        return try {
+            // Get the query reference for the rooms collection with a filter by building number
+            val queryRef = db.collection("rooms").whereEqualTo("buildingNr", buildingNr)
+            // Get the query snapshot and convert it to a list of Room objects
+            val snapshot = queryRef.get().await()
+            snapshot.toObjects(Room::class.java)
+        } catch (e: Exception) {
+            // Handle any errors and return an empty list if something went wrong
+            e.printStackTrace()
+            emptyList()
+        }
+    }
+
+    override suspend fun getBuildings(): List<Building> {
+        return try {
+            // Get the query reference for the buildings collection
+            val queryRef = db.collection("buildings")
+            // Get the query snapshot and convert it to a list of Building objects
+            val snapshot = queryRef.get().await()
+            snapshot.toObjects(Building::class.java)
+        } catch (e: Exception) {
+            // Handle any errors and return an empty list if something went wrong
+            e.printStackTrace()
+            emptyList()
+        }
+    }
+}
+
+// A composable function that displays a list of rooms
+@Composable
+fun RoomList(rooms: List<Room>, onRoomClick: (Room) -> Unit) {
+    // Use a LazyColumn to display the rooms in a vertical scrollable list
+    LazyColumn {
+        // Loop through the rooms and create an item for each one
+        items(rooms) { room ->
+            // Use a Card to display the room information
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(8.dp)
+                    .clickable { onRoomClick(room) }, // Invoke the callback when the card is clicked
+                elevation = 4.dp
+            ) {
+                // Use a Row to arrange the room number and description horizontally
+                Row(
+                    modifier = Modifier.padding(16.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    // Use a Text to display the room number
+                    Text(
+                        text = "Room ${room.roomNr}",
+                        style = MaterialTheme.typography.headlineMedium,
+                        modifier = Modifier.weight(1f) // Make the text fill the available space
+                    )
+                    // Use a Text to display the room description
+                    Text(
+                        text = room.description,
+                        style = MaterialTheme.typography.bodySmall,
+                        modifier = Modifier.padding(start = 8.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+// A composable function that displays a form to edit a profile
+@Composable
+fun ProfileForm(profile: Profile, onProfileChange: (Profile) -> Unit, onSaveClick: () -> Unit) {
+    // Use a Column to arrange the form elements vertically
+    Column(modifier = Modifier.padding(16.dp)) {
+        // Use a TextField to edit the name
+        TextField(
+            value = profile.name,
+            onValueChange = { name -> onProfileChange(profile.copy(name = name)) }, // Invoke the callback when the value changes
+            label = { Text("Name") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        // Use a Spacer to add some vertical space
+        Spacer(modifier = Modifier.height(8.dp))
+        // Use a TextField to edit the email
+        TextField(
+            value = profile.email,
+            onValueChange = { email -> onProfileChange(profile.copy(email = email)) }, // Invoke the callback when the value changes
+            label = { Text("Email") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        // Use a Spacer to add some vertical space
+        Spacer(modifier = Modifier.height(16.dp))
+        // Use a Button to save the profile changes
+        Button(
+            onClick = onSaveClick, // Invoke the callback when the button is clicked
+            modifier = Modifier.align(Alignment.End)
+        ) {
+            Text("Save")
+        }
+    }
+}
+
+
+// A preview for the RoomList composable function with some dummy data
+@Preview(showBackground = true)
+@Composable
+fun RoomListPreview() {
+    val rooms = listOf(
+        Room(id = "1", roomNr = 3110, buildingNr = 1, floor = 3, description = "3, Etage rechts"),
+        Room(id = "2", roomNr = 2203, buildingNr = 2, floor = 2, description = "2. Etage links"),
+        Room(id = "3", roomNr = 1401, buildingNr = 4, floor = 1, description = "Mensa")
+    )
+    RoomList(rooms) { room ->
+        // Do nothing for preview
+    }
+}
+
+// A preview for the ProfileForm composable function with some dummy data
+@Preview(showBackground = true)
+@Composable
+fun ProfileFormPreview() {
+    val profile = Profile(id = "1", name = "Alice", email = "alice@example.com")
+    ProfileForm(profile, onProfileChange = {}, onSaveClick = {}) // Pass empty lambda expressions
+}

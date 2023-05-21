@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "294413076686",
+    "project_id": "campusnav-f5e77",
+    "storage_bucket": "campusnav-f5e77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:294413076686:android:8966f94ca87e7cb3dba89f",
+        "android_client_info": {
+          "package_name": "com.example.navigationdrawer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "294413076686-c3ro2r8mo1cek0tr0kem8pvts37321up.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdO0O5uqwTgDQeZlGHoI3VU5WlWgD-C10"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "294413076686-c3ro2r8mo1cek0tr0kem8pvts37321up.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
