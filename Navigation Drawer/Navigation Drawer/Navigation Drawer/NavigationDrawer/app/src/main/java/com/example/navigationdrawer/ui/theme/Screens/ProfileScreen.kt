@@ -26,6 +26,8 @@ import androidx.compose.material.TextField
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -44,6 +46,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.example.navigationdrawer.R
+import com.example.navigationdrawer.mvvm.MainViewModel
 
 
 // Eine Annotation für die Composable-Preview-Funktion
@@ -95,7 +98,11 @@ fun getUsers(): List<User> {
 
 @Composable
 
-fun ProfileScreen() {
+fun ProfileScreen(viewModel: MainViewModel) {
+
+    // Beobachte das Profil des aktuellen Users aus dem ViewModel
+    val profile by viewModel.profile.observeAsState()
+
     // Ein Zustand für den aktuellen User (hier nur der erste aus der Liste)
 
     val currentUser = remember { mutableStateOf(getUsers().first()) }

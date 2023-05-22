@@ -14,6 +14,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.CameraSelector
 import androidx.camera.core.ImageAnalysis
 import androidx.camera.core.ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST
@@ -72,6 +73,8 @@ import androidx.navigation.compose.rememberNavController
 import com.example.navigationdrawer.database.Building
 import com.example.navigationdrawer.database.Profile
 import com.example.navigationdrawer.database.Room
+import com.example.navigationdrawer.mvvm.MainScreen
+import com.example.navigationdrawer.mvvm.MainViewModel
 import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
 import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
 import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
@@ -84,6 +87,162 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        // Setze den Content auf die MainScreen Funktion
+        setContent {
+            MainScreen()
+        }
+    }
+    object FirestoreUtil {
+        @SuppressLint("StaticFieldLeak")
+        private var firestoreInstance: FirebaseFirestore? = null
+
+        val firestore: FirebaseFirestore
+            get() {
+                if (firestoreInstance == null) {
+                    firestoreInstance = FirebaseFirestore.getInstance()
+                    // Configure Firestore settings
+                    firestoreInstance?.firestoreSettings = FirebaseFirestoreSettings.Builder()
+                        .setPersistenceEnabled(true)
+                        .build()
+                }
+                return firestoreInstance as FirebaseFirestore
+            }
+    }
+}
+
+@Composable
+fun HelpScreen(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text= "Help Screen",
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
+@Composable
+fun SettingsScreen(){
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(
+            text= "Settings Screen",
+            fontWeight = FontWeight.Bold,
+            color = Color.Black,
+            fontSize = 30.sp,
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
+@Composable
+fun ScannerScreen(onBackClick: MainViewModel) {
+    var code by remember {
+        mutableStateOf("")
+    }
+    val context = LocalContext.current
+    val lifecycleOwner = LocalLifecycleOwner.current
+    val cameraProviderFuture = remember {
+        ProcessCameraProvider.getInstance(context)
+    }
+    var hasCameraPermission by remember {
+        mutableStateOf(
+            ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        )
+    }
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.RequestPermission(),
+        onResult = { granted ->
+            hasCameraPermission = granted
+        }
+    )
+    LaunchedEffect(key1 = true) {
+        launcher.launch(Manifest.permission.CAMERA)
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        if (hasCameraPermission) {
+            AndroidView(
+                factory = { context ->
+                    val previewView = PreviewView(context)
+                    val preview = androidx.camera.core.Preview.Builder().build()
+                    val selector = CameraSelector.Builder()
+                        .requireLensFacing(CameraSelector.LENS_FACING_BACK)
+                        .build()
+                    preview.setSurfaceProvider(previewView.surfaceProvider)
+                    val imageAnalysis = ImageAnalysis.Builder()
+                        .setTargetResolution(
+                            Size(
+                                previewView.width,
+                                previewView.height
+                            )
+                        )
+                        .setBackpressureStrategy(STRATEGY_KEEP_ONLY_LATEST)
+                        .build()
+                    imageAnalysis.setAnalyzer(
+                        ContextCompat.getMainExecutor(context),
+                        QrCodeAnalyzer { result ->
+                            code = result
+                        }
+                    )
+                    try {
+                        cameraProviderFuture.get().bindToLifecycle(
+                            lifecycleOwner,
+                            selector,
+                            preview,
+                            imageAnalysis
+                        )
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                    previewView
+
+                },
+                modifier = Modifier.weight(1f)
+            )
+            Text(
+                //text= "Scanner Screen",
+                // fontWeight = FontWeight.Bold,
+                //            color = Color.Black,
+                //            fontSize = 30.sp,
+                //            textAlign = TextAlign.Center
+                text = code,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(32.dp)
+
+            )
+        }
+    }
+}
+
+
+/*
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -468,7 +627,7 @@ fun RoomScreen(onBackClick: () -> Unit){
 
 
 @Composable
-fun ScannerScreen(onBackClick: () -> Unit) {
+fun ScannerScreen(onBackClick: MainViewModel) {
     var code by remember {
         mutableStateOf("")
     }
@@ -1137,3 +1296,7 @@ fun ProfileFormPreview() {
     val profile = Profile(id = "1", name = "Alice", email = "alice@example.com")
     ProfileForm(profile, onProfileChange = {}, onSaveClick = {}) // Pass empty lambda expressions
 }
+
+
+
+*/
