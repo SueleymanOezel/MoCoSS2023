@@ -4,6 +4,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
 import kotlinx.coroutines.tasks.await
+import android.util.Log
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.setValue
+
 
 // Die Datenklasse für das Profil des Users
 data class Profile(
@@ -33,6 +38,68 @@ data class CurrentRoom(
     val room: Room,
     val scannedCode: String
 )
+
+
+// Eine Klasse, die den Zustand zur Aktualisierung für die Anmeldung (Sign Up-Formular) eines Benutzers repräsentiert
+class SignUpState {
+
+    /**
+     * mutableStateOf-Funktion ermöglicht es, den Zustand einer Variable zu verfolgen
+     * und automatisch die betroffenen UI-Elemente neu zu rendern, wenn sich der Zustand ändert.
+     * Die private set-Anweisung stellt sicher, dass die Variablen nur innerhalb der Klasse geändert werden können.
+     */
+
+    var firstName: String by mutableStateOf("")
+        private set
+    var lastName: String by mutableStateOf("")
+
+    var emailAddress: String by mutableStateOf("")
+        private set
+    var password: String by mutableStateOf("")
+        private set
+    var confirmPassword: String by mutableStateOf("")
+        private set
+    var checked: Boolean by mutableStateOf(false)
+        private set
+
+    /*
+     Eine berechnete Eigenschaft, die den Zustand des Buttons "Sign Up" aktiviert
+     -> enableButton gibt true zurück, wenn alle erforderlichen Felder (firstName, lastName, confirmPassword und password)
+     ausgefüllt sind.
+    */
+    val enableButton = firstName.isNotBlank() && lastName.isNotBlank() &&
+            confirmPassword.isNotBlank() && password.isNotBlank()
+
+
+    // Funktionen zum Aktualisieren der Werte der einzelnen Eigenschaften
+
+    fun firstNameChenged(newValue: String){
+        firstName = newValue
+
+    }
+
+    fun lastNameChange(newValue: String) {
+        lastName = newValue
+    }
+
+    fun emailAddressChange(newValue: String) {
+        emailAddress = newValue
+    }
+
+    fun password(newValue: String) {
+        password = newValue
+    }
+
+    fun confirmPasswordChange(newValue: String) {
+        confirmPassword = newValue
+    }
+    fun checkedChange(newValue: Boolean) {
+        checked = newValue
+    }
+
+
+}
+
 
 // Die abstrakte Klasse für die Datenzugriffsschicht
 abstract class DatabaseDao {

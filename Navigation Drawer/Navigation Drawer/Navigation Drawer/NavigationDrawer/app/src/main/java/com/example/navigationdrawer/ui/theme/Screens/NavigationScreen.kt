@@ -34,3 +34,5 @@ fun NavigationScreen(onRoomClick: () -> Unit, onScannerClick: () -> Unit){
         )
     }
 }
+
+

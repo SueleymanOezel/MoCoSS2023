@@ -1,36 +1,27 @@
 {
   "project_info": {
-    "project_number": "294413076686",
-    "project_id": "campusnav-f5e77",
-    "storage_bucket": "campusnav-f5e77.appspot.com"
+    "project_number": "1014315565958",
+    "firebase_url": "https://navigation-drawer-f9239-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "navigation-drawer-f9239",
+    "storage_bucket": "navigation-drawer-f9239.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:294413076686:android:8966f94ca87e7cb3dba89f",
+        "mobilesdk_app_id": "1:1014315565958:android:23b52a54564bfbbc27e207",
         "android_client_info": {
           "package_name": "com.example.navigationdrawer"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "294413076686-c3ro2r8mo1cek0tr0kem8pvts37321up.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDdO0O5uqwTgDQeZlGHoI3VU5WlWgD-C10"
+          "current_key": "AIzaSyCALcQCflWLxnFKO8RoQYoCIW9LF6YCZxw"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "294413076686-c3ro2r8mo1cek0tr0kem8pvts37321up.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

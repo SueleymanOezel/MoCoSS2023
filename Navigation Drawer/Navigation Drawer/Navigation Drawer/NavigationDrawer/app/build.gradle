@@ -105,7 +105,11 @@ dependencies {
 }
 
 dependencies {
-    implementation 'com.google.firebase:firebase-database-ktx:20.0.4'
+
+
+    implementation 'com.google.firebase:firebase-database:20.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.1.0'
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
 

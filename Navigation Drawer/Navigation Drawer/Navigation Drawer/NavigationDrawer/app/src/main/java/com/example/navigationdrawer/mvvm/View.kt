@@ -52,7 +52,7 @@ import com.example.navigationdrawer.MainActivity.FirestoreUtil.firestore
 import com.example.navigationdrawer.MenueItem
 import com.example.navigationdrawer.R
 import com.example.navigationdrawer.ScannerScreen
-import com.example.navigationdrawer.SettingsScreen
+import com.example.navigationdrawer.ui.theme.Screens.SettingsScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 

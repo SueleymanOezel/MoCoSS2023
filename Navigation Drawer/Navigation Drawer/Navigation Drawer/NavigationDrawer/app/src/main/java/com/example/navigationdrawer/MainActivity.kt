@@ -75,6 +75,7 @@ import com.example.navigationdrawer.database.Profile
 import com.example.navigationdrawer.database.Room
 import com.example.navigationdrawer.mvvm.MainScreen
 import com.example.navigationdrawer.mvvm.MainViewModel
+import com.example.navigationdrawer.ui.theme.Screens.App
 import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
 import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
 import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
@@ -94,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
         // Setze den Content auf die MainScreen Funktion
         setContent {
-            MainScreen()
+           App()
         }
     }
     object FirestoreUtil {
@@ -132,7 +133,7 @@ fun HelpScreen(){
         )
     }
 }
-
+/*
 @Composable
 fun SettingsScreen(){
     Column(
@@ -149,7 +150,7 @@ fun SettingsScreen(){
             textAlign = TextAlign.Center
         )
     }
-}
+}*/
 
 @Composable
 fun ScannerScreen(onBackClick: MainViewModel) {
