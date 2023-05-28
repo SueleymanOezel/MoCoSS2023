@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
+
 class MainViewModel(private val dao: FirestoreDao): ViewModel() {
     // Die LiveData Eigenschaft für das Profil des aktuellen Users
     private val _profile = MutableLiveData<Profile>()

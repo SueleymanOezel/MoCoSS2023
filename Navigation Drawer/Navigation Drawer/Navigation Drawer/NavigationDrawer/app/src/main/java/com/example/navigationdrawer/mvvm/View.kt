@@ -52,7 +52,10 @@ import com.example.navigationdrawer.MainActivity.FirestoreUtil.firestore
 import com.example.navigationdrawer.MenueItem
 import com.example.navigationdrawer.R
 import com.example.navigationdrawer.ScannerScreen
+import com.example.navigationdrawer.Login.LoginViewModel
+import com.example.navigationdrawer.ui.theme.Screens.LoginScreen
 import com.example.navigationdrawer.ui.theme.Screens.SettingsScreen
+import com.example.navigationdrawer.ui.theme.Screens.SignUpScreen
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -268,10 +271,76 @@ fun DrawerItem(item: MenueItem, selected: Boolean, onItemClick: (MenueItem) -> U
     }
 }
 
-@Composable
-fun Navigation(navController: NavHostController, viewModel: MainViewModel) {
+enum class LoginRoutes {
+    Signup,
+    SignIn
+}
 
-    NavHost(navController, startDestination = MenueItem.Home.route) {
+enum class HomeRoutes {
+    Home,
+    Detail
+}
+
+@Composable
+fun Navigation(
+    navController: NavHostController,
+    viewModel: MainViewModel,
+    // loginViewModel: LoginViewModel
+
+) {
+/*
+    NavHost(
+        navController = navController,
+        startDestination = LoginRoutes.SignIn.name
+    ) {
+        composable(route = LoginRoutes.SignIn.name) {
+            LoginPageScreen(onNavToMainScreen = {
+                navController.navigate(HomeRoutes.Home.name) {
+                    launchSingleTop = true
+                    popUpTo(route = LoginRoutes.SignIn.name) {
+                        inclusive = true
+                    }
+                }
+            },
+                loginViewModel = loginViewModel
+
+            ) {
+                navController.navigate(LoginRoutes.Signup.name) {
+                    launchSingleTop = true
+                    popUpTo(LoginRoutes.SignIn.name) {
+                        inclusive = true
+                    }
+                }
+            }
+        }
+
+        composable(route = LoginRoutes.Signup.name) {
+            SignUpPageScreen(onNavToMainScreen = {
+                navController.navigate(HomeRoutes.Home.name) {
+                    popUpTo(LoginRoutes.Signup.name) {
+                        inclusive = true
+                    }
+                }
+            },
+                loginViewModel = loginViewModel
+            ) {
+                navController.navigate(LoginRoutes.SignIn.name)
+            }
+
+        }
+
+        composable(route = HomeRoutes.Home.name) {
+            MainScreen()
+        }
+
+    }
+
+
+ */
+    NavHost(
+        navController,
+        startDestination = MenueItem.Home.route
+    ) {
         composable(MenueItem.Home.route) {
             com.example.navigationdrawer.ui.theme.Screens.HomeScreen(viewModel) // Gib das ViewModel an den HomeScreen weiter
         }

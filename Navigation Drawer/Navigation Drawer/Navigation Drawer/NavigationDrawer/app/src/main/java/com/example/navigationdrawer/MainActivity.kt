@@ -64,6 +64,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -75,7 +76,10 @@ import com.example.navigationdrawer.database.Profile
 import com.example.navigationdrawer.database.Room
 import com.example.navigationdrawer.mvvm.MainScreen
 import com.example.navigationdrawer.mvvm.MainViewModel
+import com.example.navigationdrawer.Login.LoginViewModel
+import com.example.navigationdrawer.Login.NavToMain
 import com.example.navigationdrawer.ui.theme.Screens.App
+//import com.example.navigationdrawer.ui.theme.Screens.App
 import com.example.navigationdrawer.ui.theme.Screens.HomeScreen
 import com.example.navigationdrawer.ui.theme.Screens.NavigationScreen
 import com.example.navigationdrawer.ui.theme.Screens.ProfileScreen
@@ -93,11 +97,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         // Setze den Content auf die MainScreen Funktion
         setContent {
-           App()
+           // val loginViewModel = viewModel(modelClass = LoginViewModel::class.java)
+          //NavToMain(loginViewModel = loginViewModel)
+            App()
         }
     }
+
     object FirestoreUtil {
         @SuppressLint("StaticFieldLeak")
         private var firestoreInstance: FirebaseFirestore? = null

@@ -1,5 +1,7 @@
 package com.example.navigationdrawer.ui.theme.Screens
 
+import android.graphics.BitmapShader
+import android.graphics.Shader
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,6 +12,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
@@ -29,23 +32,41 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Rect
 import androidx.compose.ui.geometry.center
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.Paint
 import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
+import androidx.compose.ui.graphics.nativeCanvas
+import androidx.compose.ui.graphics.withSave
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import coil.compose.rememberImagePainter
 import com.example.navigationdrawer.R
 import com.example.navigationdrawer.mvvm.MainScreen
 import com.example.navigationdrawer.mvvm.SignUpState
-
+import com.example.navigationdrawer.ui.theme.NavigationDrawerTheme
+import androidx.compose.ui.res.imageResource
+import androidx.compose.ui.unit.IntOffset
+import androidx.compose.ui.unit.IntSize
+import coil.compose.ImagePainter.State.Empty.painter
+import com.example.navigationdrawer.ui.theme.BackgroundLogo
+import com.example.navigationdrawer.ui.theme.Blue1
+import com.example.navigationdrawer.ui.theme.Blue2
 
 /*
 @Composable
@@ -92,7 +113,7 @@ fun App(){
         composable(Screen.Start.name) {
 
             // Aufruf der StartPageScreen-Funktion mit den entsprechenden Navigationsschritten
-            StartPageScreen(
+            StartScreen(
                 onLoginClick = { navController.navigate(Screen.SignIn.name) },
                 onSignUpClick = {navController.navigate(Screen.SignUp.name)}
             )
@@ -101,13 +122,13 @@ fun App(){
         composable(Screen.SignIn.name){
             // Aufruf der LoginPageScreen-Funktion und Übergabe des NavHostControllers
             // -> Navigationspunkt für die Login-Seite
-            LoginPageScreen(navController = navController)
+            LoginScreen(navController = navController)
         }
 
         composable(Screen.SignUp.name){
             // Aufruf der SignUpPageScreen-Funktion und Übergabe des NavHostControllers
             // -> Navigationspunkt für die Registrierungsseite
-            SignUpPageScreen(navController = navController)
+            SignUpScreen(navController = navController)
         }
 
         composable(Screen.Main.name){
@@ -121,13 +142,13 @@ fun App(){
 
 
 @Composable
-fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
+fun StartScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
 
     // Zustandsvariablen für die aktuelle Seite
     val (currentPage, setCurrentPage) = remember { mutableStateOf(Screen.SignIn) }
 
     // Hintergrundfläche mit primärer Farbe
-    Surface(color = MaterialTheme.colors.primaryVariant) {
+    Surface(color = Color.Gray) {
         // Box-Container für die gesamte Startseite
         Box(
             modifier = Modifier
@@ -156,7 +177,7 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
                     }
 
                     // Zeichnen des Pfads mit der Farbe LightGray
-                    drawPath(path = path, color = Color.LightGray)
+                    drawPath(path = path, color = Color(0xFDE1E1ED))
 
                 }
         ) {
@@ -169,15 +190,14 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
                     text = "Hello",
                     style = MaterialTheme.typography.h1,
                     fontSize = 32.sp,
-                    color = MaterialTheme.colors.primary,
+                    color = Color.Black,
                     fontWeight = FontWeight.Bold
                 )
-
                 Text(
                     text = "Welcome to CampusNav",
                     style = MaterialTheme.typography.body1,
                     fontSize = 24.sp,
-                    color = MaterialTheme.colors.primary
+                    color = Color.Black
                 )
 
                 Spacer(
@@ -188,7 +208,7 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
                 Image(
                     painter = painterResource(id = R.drawable.campusnav_icon),
                     contentDescription = null,
-                    modifier = Modifier.size(210.dp)
+                    modifier = Modifier.size(230.dp)
                 )
             }
 
@@ -205,7 +225,11 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
                 Button(
                     onClick = onLoginClick,
                     modifier = Modifier.fillMaxWidth(),
-                    shape = MaterialTheme.shapes.medium
+                    shape = MaterialTheme.shapes.medium,
+                    colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Blue2
+
+                    )
                 ) {
                     Text(text = "Sign In")
                 }
@@ -219,7 +243,7 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
                     modifier = Modifier.fillMaxWidth(),
                     shape = MaterialTheme.shapes.medium,
                     colors = ButtonDefaults.buttonColors(
-                        backgroundColor = MaterialTheme.colors.onSurface
+                        backgroundColor = Blue1
                     )
                 ) {
                     Text(text = "Sign up")
@@ -231,13 +255,23 @@ fun StartPageScreen(onLoginClick: () -> Unit, onSignUpClick:() -> Unit) {
 }
 
 
-
-
+// Preview für den Start Bildschirm
+@Preview
 @Composable
-fun LoginPageScreen(navController: NavHostController) {
+fun StartScreenPreview() {
+    StartScreen(
+        onLoginClick = {},
+        onSignUpClick = {}
+    )
+}
+
+
+// Funktion für den Login-Bildschirm
+@Composable
+fun LoginScreen(navController: NavHostController) {
 
     Surface(
-        color = MaterialTheme.colors.primaryVariant,
+        color = Color.LightGray,
         contentColor = MaterialTheme.colors.onSurface,
     ) {
 
@@ -386,14 +420,24 @@ fun LoginPageScreen(navController: NavHostController) {
 }
 
 
+//Preview für Login Bildschirm
+@Preview
 @Composable
-fun SignUpPageScreen(navController: NavHostController) {
+fun LoginScreenPreview() {
+    val navController = rememberNavController()
+    LoginScreen(navController = navController)
+}
+
+
+
+@Composable
+fun SignUpScreen(navController: NavHostController) {
 
     // Erstellen des Zustands für die SignUp-Seite
     val signUpState = SignUpState()
 
     Surface(
-        color = MaterialTheme.colors.primaryVariant,
+        color = Color.LightGray,
         contentColor = MaterialTheme.colors.onSurface,
     ) {
         Column(
@@ -544,6 +588,43 @@ fun SignUpPageScreen(navController: NavHostController) {
 
 
 }
+
+// Preview für Registrierungsbildschirm
+@Preview
+@Composable
+fun SignUpScreenPreview() {
+    val navController = rememberNavController()
+    SignUpScreen(navController = navController)
+}
+
+
+
+/*
+
+// Preview für Login Screen
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPrev() {
+    NavigationDrawerTheme() {
+        LoginScreen(navController = )
+    }
+}
+
+
+// Preview für SignUp Screen
+@Preview(showBackground = true)
+@Composable
+fun StartScreenPrev() {
+    NavigationDrawerTheme() {
+        SignUpScreen(navController = ) {
+
+        }
+    }
+}
+
+
+ */
+
 
 /*
 @Preview(showBackground = true)
