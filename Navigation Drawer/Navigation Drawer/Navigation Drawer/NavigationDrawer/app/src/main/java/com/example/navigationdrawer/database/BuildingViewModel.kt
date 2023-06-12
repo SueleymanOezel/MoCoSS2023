@@ -23,7 +23,7 @@ class BuildingViewModel : ViewModel() {
     fun createBuilding(){
         // Generate some random values for the profile fields
         val buildingNr = 1
-        val name = "Müller"
+        val name = "Hauptgebaude"
         // Create a new building object with the random values
         val building = Building("1", buildingNr, name)
         // Write the building to the database using the BuildingService class
