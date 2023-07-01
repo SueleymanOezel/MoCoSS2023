@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CampusNavTest</string>
+    <string name="google_maps_key" translatable="false">AIzaSyDNqsJABmTVtI429nBtSxZ0iCKstzQ4r9c</string>
 </resources>
