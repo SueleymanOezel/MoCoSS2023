@@ -1,22 +1,29 @@
 package com.example.scan.database.room
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Room
-import androidx.room.Update
-import kotlinx.coroutines.flow.Flow
 
 // Data Access Object für Raumdaten
 @Dao
-interface RoomDao {
-    @Query("SELECT * FROM rooms WHERE roomNumber = :roomNumber")
-    fun getRoomByNumber(roomNumber: String): RoomEntity?
+interface RaumDao {
+    @Query("SELECT * FROM raum WHERE roomNumber = :roomNumber")
+    fun getRoomByNumber(roomNumber: Int): LiveData<RaumEntity>
 
+    //Methode, die einen Raum in die Tabelle "room" einfügt oder ersetzt, wenn er bereits existiert
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRoom(room: RoomEntity)
+    suspend fun insertRoom(raum: RaumEntity)
+
+    // Methode, die mehrere Räume in die Tabelle "raum" einfügt oder ersetzt, wenn sie bereits existieren
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertRooms(raum: List<RaumEntity>)
+
+    //Methode, die einen Raum aus der Tabelle "room" löscht
+    @Delete
+    suspend fun deleteRoom(raum: RaumEntity)
 
 /*
     @Update

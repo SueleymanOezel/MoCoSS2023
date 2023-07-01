@@ -5,7 +5,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 //import com.example.scan.database.home.AppDatabase
 import com.example.scan.database.home.TodoDatabase
-import com.example.scan.database.room.RoomDao
+import com.example.scan.database.room.RaumDatabase
+import com.example.scan.database.room.RaumDao
 
 class MyApplication : Application() {
     val todoDb by lazy {
@@ -15,15 +16,17 @@ class MyApplication : Application() {
         ).build()
     }
 
-    val roomDb by lazy {
+    val raumDb by lazy {
         Room.databaseBuilder(
             applicationContext,
-            RoomDatabase::class.java, "room-database"
+            RaumDatabase::class.java, "room-database"
         ).build()
     }
+    val raumDao by lazy { raumDb.raumDao()}
+
 
     val todoDao by lazy { todoDb.todoDao() }
-    // val roomDao by lazy { roomDb.roomDao() }
+
 }
 
 

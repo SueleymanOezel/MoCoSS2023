@@ -2,8 +2,8 @@ package com.example.scan.database.home
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.scan.database.room.RoomDao
-import com.example.scan.database.room.RoomEntity
+import com.example.scan.database.room.RaumDao
+import com.example.scan.database.room.RaumEntity
 
 
 /**

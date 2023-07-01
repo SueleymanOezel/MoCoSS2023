@@ -3,25 +3,59 @@ package com.example.scan
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import com.example.scan.bottomnavigation.Navigation
+import com.example.scan.database.room.RaumDao
+import com.example.scan.database.room.RaumDatabase
+import com.example.scan.database.room.RaumEntity
 import com.example.scan.mvvm.MainViewModel
 import com.example.scan.screens.ImageData
 import com.example.scan.ui.theme.ScanTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
+import kotlinx.coroutines.launch
 
 @ExperimentalPermissionsApi
 class MainActivity : ComponentActivity() {
 
     private val viewModel by lazy {
-        MainViewModel(
-            (application as MyApplication).todoDb.todoDao()
-            // (application as MyApplication).db.roomDao()
-            )
+        MainViewModel((application as MyApplication).todoDb.todoDao(), raumDao)
+    }
+
+    private lateinit var raumDao: RaumDao
+    private fun insertRooms(rooms: List<RaumEntity>) {
+        lifecycleScope.launch {
+            raumDao.insertRooms(rooms)
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        raumDao = (application as MyApplication).raumDao
+        val rooms: List<RaumEntity> = listOf(
+            RaumEntity(
+                roomNumber = 1101,
+                roomName = "BAföG-Amt des KStW",
+                buildingNumber = 1,
+                buildingName = "Hauptgebäude Links",
+                floor = "1.Etage",
+                roomText = "Vom Haupteingang des Hauptgebäudes gehen Sie nach links auf der ersten Etage befindet sich der Raum."
+            ),
+            RaumEntity(
+                roomNumber = 1123,
+                roomName = "Fachschaft",
+                buildingNumber = 1,
+                buildingName = "Hauptgebäude Links",
+                floor = "1.Etage",
+                roomText = "Vom Haupteingang des Hauptgebäudes gehen Sie nach links auf der ersten Etage befindet sich der Raum."
+            ),
+            //Anderen Raeume kommen noch
+        )
+
+        insertRooms(rooms)
+
+
 
         setContent {
             ScanTheme {

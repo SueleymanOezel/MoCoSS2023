@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.scan.database.home.TodoDao
 import com.example.scan.database.home.TodoItem
-import com.example.scan.database.room.RoomDao
-import com.example.scan.database.room.RoomEntity
+import com.example.scan.database.room.RaumDao
+import com.example.scan.database.room.RaumEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,7 +16,7 @@ import kotlinx.coroutines.launch
 class MainViewModel(
 
     private val todoDao: TodoDao,
-    // private val roomDao: RoomDao
+    private val raumDao: RaumDao
 
     ) : ViewModel() {
 
