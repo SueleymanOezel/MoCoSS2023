@@ -1,5 +1,3 @@
 <resources>
-    <string name="app_name">My Application</string>
-    <string name="google_maps_key" translatable="false">YOUR_API_KEY</string>
-
+    <string name="app_name">CampusNavTest</string>
 </resources>
