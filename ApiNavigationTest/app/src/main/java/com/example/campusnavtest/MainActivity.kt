@@ -18,6 +18,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,8 +31,8 @@ class MainActivity : ComponentActivity() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MainScreen(activity: ComponentActivity) {
-    var startPoint by remember { mutableStateOf("") }
-    var destination by remember { mutableStateOf("") }
+    val startPoint = "Cologne"
+    val destination = "Berlin"
 
     Column(
         modifier = Modifier.padding(16.dp),
@@ -39,14 +40,16 @@ fun MainScreen(activity: ComponentActivity) {
     ) {
         TextField(
             value = startPoint,
-            onValueChange = { startPoint = it },
-            label = { Text("Startpunkt eingeben") }
+            onValueChange = { /* Keine Änderungen erlaubt */ },
+            label = { Text("Startpunkt eingeben") },
+            enabled = false // Textfeld deaktivieren
         )
 
         TextField(
             value = destination,
-            onValueChange = { destination = it },
-            label = { Text("Ziel eingeben") }
+            onValueChange = { /* Keine Änderungen erlaubt */ },
+            label = { Text("Ziel eingeben") },
+            enabled = false // Textfeld deaktivieren
         )
 
         Button(
@@ -60,8 +63,9 @@ fun MainScreen(activity: ComponentActivity) {
     }
 }
 
+
 fun startNavigation(startPoint: String, destination: String, activity: ComponentActivity) {
-    val gmmIntentUri = Uri.parse("google.navigation:q=$destination&mode=d")
+    val gmmIntentUri = Uri.parse("google.navigation:q=$startPoint&destination=$destination&mode=w")
     val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
     mapIntent.setPackage("com.google.android.apps.maps")
 
@@ -75,3 +79,10 @@ fun startNavigation(startPoint: String, destination: String, activity: Component
         ).show()
     }
 }
+
+
+
+
+
+
+
