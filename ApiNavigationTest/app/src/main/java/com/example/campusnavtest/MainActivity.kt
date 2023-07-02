@@ -1,99 +1,77 @@
 package com.example.campusnavtest
 
-import android.Manifest
-import android.content.pm.PackageManager
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.TextField
+import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.viewinterop.AndroidView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import com.example.campusnavtest.ui.theme.CampusNavTestTheme
-import com.google.android.gms.maps.MapView
+import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
-    private lateinit var mapView: MapView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        mapView = MapView(this)
-        mapView.onCreate(savedInstanceState)
-
         setContent {
-            val context = LocalContext.current
-            AndroidView(
-                modifier = Modifier.fillMaxSize(),
-                factory = { mapView }
-            ) { view ->
-                if (hasLocationPermission()) {
-                    initMapView(view)
-                } else {
-                    requestLocationPermission()
-                }
-            }
+            MainScreen(this)
         }
     }
+}
 
-    override fun onResume() {
-        super.onResume()
-        mapView.onResume()
-    }
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun MainScreen(activity: ComponentActivity) {
+    var startPoint by remember { mutableStateOf("") }
+    var destination by remember { mutableStateOf("") }
 
-    override fun onPause() {
-        super.onPause()
-        mapView.onPause()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        mapView.onDestroy()
-    }
-
-    private fun hasLocationPermission(): Boolean {
-        return ContextCompat.checkSelfPermission(
-            this,
-            Manifest.permission.ACCESS_FINE_LOCATION
-        ) == PackageManager.PERMISSION_GRANTED
-    }
-
-    private fun requestLocationPermission() {
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            LOCATION_PERMISSION_REQUEST_CODE
+    Column(
+        modifier = Modifier.padding(16.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
+    ) {
+        TextField(
+            value = startPoint,
+            onValueChange = { startPoint = it },
+            label = { Text("Startpunkt eingeben") }
         )
-    }
 
-    private fun initMapView(mapView: MapView) {
-        mapView.getMapAsync { googleMap ->
-            // Hier kannst du die Google Maps API verwenden
+        TextField(
+            value = destination,
+            onValueChange = { destination = it },
+            label = { Text("Ziel eingeben") }
+        )
+
+        Button(
+            onClick = {
+                startNavigation(startPoint, destination, activity)
+            },
+            modifier = Modifier.align(Alignment.CenterHorizontally)
+        ) {
+            Text("Navigation starten")
         }
     }
-
-    companion object {
-        private const val LOCATION_PERMISSION_REQUEST_CODE = 1
-    }
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun startNavigation(startPoint: String, destination: String, activity: ComponentActivity) {
+    val gmmIntentUri = Uri.parse("google.navigation:q=$destination&mode=d")
+    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+    mapIntent.setPackage("com.google.android.apps.maps")
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    CampusNavTestTheme {
-        Greeting("Android")
+    if (mapIntent.resolveActivity(activity.packageManager) != null) {
+        activity.startActivity(mapIntent)
+    } else {
+        Toast.makeText(
+            activity,
+            "Google Maps ist auf diesem Gerät nicht installiert.",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
