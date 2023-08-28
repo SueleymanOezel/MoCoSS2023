@@ -40,6 +40,7 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Button
@@ -61,11 +62,13 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import java.util.Locale
 
 
@@ -146,6 +149,8 @@ fun BuildingScreen() {
 
         // usw. bei Bedarf kann man hier weitere Bilder hinzufügen ...
     )
+
+
     val searchQuery = remember { mutableStateOf("") }
     val filteredImageList = imageList.filter { imageData ->
         imageData.caption.contains(searchQuery.value, ignoreCase = true) ||
@@ -156,6 +161,32 @@ fun BuildingScreen() {
     var selectedIndex by remember { mutableStateOf(0) }
 
     Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Row(verticalAlignment = Alignment.CenterVertically) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.building),
+                            contentDescription = "Logo",
+                            modifier = Modifier.size(28.dp)
+                        )
+                        Text(
+                            "Gebäudeplan",
+                            modifier = Modifier.padding(start = 10.dp),
+                            style = TextStyle(
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                            )
+                        )
+                    }
+                },
+                backgroundColor = Color(0xFF89CFF0),
+                contentColor = Color.Black
+            )
+        },
+
+        // Suchleiste hat nicht funktioniert, wie erwartet. Deswegen auskommentiert.
+    /*
         topBar = {
             TopAppBar(
                 title = {
@@ -194,7 +225,9 @@ fun BuildingScreen() {
                     }
                 }
             )
-        }
+        } */
+
+
     ) {
         LazyColumn(
             modifier = Modifier.fillMaxSize(),
@@ -205,7 +238,9 @@ fun BuildingScreen() {
                 ImageListItem(imageData, isSelected = imageData == filteredImageList[selectedIndex])
             }
         }
-    }
+        }
+
+
 }
 
 

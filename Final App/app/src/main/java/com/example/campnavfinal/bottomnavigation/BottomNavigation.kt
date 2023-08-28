@@ -1,6 +1,5 @@
 package com.example.campnavfinal.bottomnavigation
 
-import androidx.activity.ComponentActivity
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
@@ -14,14 +13,13 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.example.campnavfinal.mvvm.MainViewModel
 import com.example.campnavfinal.screens.BuildingScreen
-import com.example.campnavfinal.screens.MainScreen
+import com.example.campnavfinal.screens.MapsScreen
 import com.example.campnavfinal.screens.home.HomeScreen
 import com.example.campnavfinal.screens.nav.NavigationScreen
 import com.example.campnavfinal.screens.ProfileScreen
 import com.example.campnavfinal.screens.nav.room.RoomDetailScreen
 import com.example.campnavfinal.screens.nav.room.RoomScreen
 import com.example.campnavfinal.screens.nav.room.ScannerScreen
-import com.example.campnavfinal.screens.startNavigationFromMain
 
 
 /**
@@ -79,7 +77,7 @@ fun Navigation(
                 }
 
                 composable("maps") {
-                    MainScreen(context = LocalContext.current)
+                    MapsScreen(context = LocalContext.current)
                 }
 
                 composable("room") {

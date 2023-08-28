@@ -90,9 +90,9 @@ fun ProfileScreen() {
                     Text(
                         text = "Profil",
                         style = TextStyle(
-                            fontSize = 30.sp,
+                            fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
-                            color = Color.White,
+                            color = Color.Black,
                             fontFamily = FontFamily.SansSerif
                         )
                     )

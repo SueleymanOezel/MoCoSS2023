@@ -75,7 +75,7 @@ fun HomeTodoView(viewModel: MainViewModel) {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
                             painter = painterResource(id = R.drawable.note),
-                            contentDescription = "Logo",
+                            contentDescription = "Notiz Icon",
                             modifier = Modifier.size(28.dp)
                         )
                         Text(
@@ -88,13 +88,14 @@ fun HomeTodoView(viewModel: MainViewModel) {
                         )
                     }
                 },
-                backgroundColor = Color(0xFF89CFF0).copy(alpha = 0.8f),
+                backgroundColor = Color(0xFF89CFF0),
                 contentColor = Color.Black
             )
         },
         content = { padding ->
             Box(
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier
+                    .fillMaxSize()
             ) {
                 // Hintergrundbild für den HomeScreen
                 Image(
@@ -115,7 +116,7 @@ fun HomeTodoView(viewModel: MainViewModel) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 16.dp, vertical = 8.dp)
+                    .padding(horizontal = 16.dp, vertical = 10.dp)
             ) {
                 var popupControl by remember { mutableStateOf(false) }
                 var searchNotes by remember { mutableStateOf("") }
