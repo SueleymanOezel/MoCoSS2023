@@ -21,7 +21,7 @@ import com.example.campnavfinal.screens.ProfileScreen
 import com.example.campnavfinal.screens.nav.room.RoomDetailScreen
 import com.example.campnavfinal.screens.nav.room.RoomScreen
 import com.example.campnavfinal.screens.nav.room.ScannerScreen
-import com.example.campnavfinal.screens.startNavigation
+import com.example.campnavfinal.screens.startNavigationFromMain
 
 
 /**
@@ -79,7 +79,7 @@ fun Navigation(
                 }
 
                 composable("maps") {
-                    MainScreen(activity = LocalContext.current as ComponentActivity)
+                    MainScreen(context = LocalContext.current)
                 }
 
                 composable("room") {
