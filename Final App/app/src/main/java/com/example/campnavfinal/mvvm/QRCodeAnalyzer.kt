@@ -59,7 +59,7 @@ class BarCodeAnalyser(
 
 
 
-class BarCodeAnalyzer(
+class QRCodeAnalyzer(
     private val onQrCodeScanned: (String) -> Unit
 ) : ImageAnalysis.Analyzer {
 

@@ -41,12 +41,15 @@ import androidx.compose.runtime.rememberUpdatedState
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.example.campnavfinal.screens.home.AddNote
 import com.example.campnavfinal.R
+import com.example.campnavfinal.ui.theme.Blue1
+import com.example.campnavfinal.ui.theme.Blue2
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -70,7 +73,7 @@ fun HomeTodoView(viewModel: MainViewModel) {
                     Text("Notes", modifier = Modifier.padding(start = 8.dp))
                 }
                 },
-                // backgroundColor = Color.Gray,
+                backgroundColor = Color(0xFF89CFF0),
                 contentColor = MaterialTheme.colors.onPrimary
             )
         },
