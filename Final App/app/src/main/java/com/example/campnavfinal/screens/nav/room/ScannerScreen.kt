@@ -32,7 +32,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
-import com.example.campnavfinal.mvvm.BarCodeAnalyzer
+import com.example.campnavfinal.mvvm.QRCodeAnalyzer
 
 
 
@@ -91,7 +91,7 @@ fun ScannerScreen() {
                         .build()
                     imageAnalysis.setAnalyzer(
                         ContextCompat.getMainExecutor(context),
-                        BarCodeAnalyzer { result ->
+                        QRCodeAnalyzer { result ->
                             code = result
                         }
                     )

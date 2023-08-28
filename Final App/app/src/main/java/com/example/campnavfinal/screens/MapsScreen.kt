@@ -7,12 +7,13 @@ import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+<<<<<<< HEAD:Final App/app/src/main/java/com/example/campnavfinal/screens/MapsScreen.kt
+=======
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.MaterialTheme
+>>>>>>> origin/main:Final App/app/src/main/java/com/example/campnavfinal/screens/SettingsScreen.kt
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -22,18 +23,43 @@ import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+<<<<<<< HEAD:Final App/app/src/main/java/com/example/campnavfinal/screens/MapsScreen.kt
+=======
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+>>>>>>> origin/main:Final App/app/src/main/java/com/example/campnavfinal/screens/SettingsScreen.kt
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.campnavfinal.R
 import com.example.campnavfinal.ui.theme.Blue2
 
 
+<<<<<<< HEAD:Final App/app/src/main/java/com/example/campnavfinal/screens/MapsScreen.kt
+// Vorschau für Einstellungen
+@Preview
+@Composable
+fun MapsScreenPreview(){
+    MapsScreen()
+}
+
+ */
+
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            MainScreen(this)
+        }
+    }
+}
+=======
 //OptIn: verwendete Material3-Bibliothek experimentell, Änderungen an der API können auftreten
 // ... (import-Anweisungen)
+>>>>>>> origin/main:Final App/app/src/main/java/com/example/campnavfinal/screens/SettingsScreen.kt
+
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
