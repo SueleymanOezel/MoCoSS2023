@@ -112,23 +112,32 @@ fun MapsScreen(context: Context) {
                 Spacer(modifier = Modifier.height(4.dp))
 
                 Text(
-                    text = "Steinmüllerallee 1, 51643   Hauptgebäude, Mensa ",
+                    text = "Steinmüllerallee 1, 51643   Hauptgebäude ",
                     style = TextStyle( fontSize = 16.sp ),
                     textAlign = TextAlign.Start,
                     modifier = Modifier.fillMaxWidth()
                     )
+
+                Text(
+                        text = "Steinmüllerallee 2, 51643   Gebäude B, Mensa ",
+                style = TextStyle( fontSize = 16.sp ),
+                textAlign = TextAlign.Start,
+                modifier = Modifier.fillMaxWidth()
+                )
                 Text(
                     text = "Steinmüllerallee 4, 51643   Hochschulbibliothek ",
                     style = TextStyle( fontSize = 16.sp ),
                     textAlign = TextAlign.Start,
                     modifier = Modifier.fillMaxWidth()
                 )
+
                 Text(
-                    text = "Steinmüllerallee 2, 51643   Gebäude B, FERCHAU ",
+                    text = "Steinmüllerallee 6, 51643   FERCHAU ",
                     style = TextStyle( fontSize = 16.sp ),
                     textAlign = TextAlign.Start,
                     modifier = Modifier.fillMaxWidth()
                 )
+
 
                 Spacer(modifier = Modifier.height(20.dp))
 
