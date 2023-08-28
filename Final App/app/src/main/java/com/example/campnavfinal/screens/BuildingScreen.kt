@@ -85,7 +85,7 @@ fun BuildingScreen() {
     val imageList = listOf(
         ImageData(
             R.drawable.hg_eg_ost,
-            "Bild 1",
+            "Die Etage beherbergt das Archiv, Lager, den technischen Betriebsdienst sowie die Zentralwerkstätten für Lehre und Forschung.",
             "Hauptgebäude Erdgeschoss (Ost)t"
         ),
 
@@ -103,43 +103,43 @@ fun BuildingScreen() {
 
         ImageData(
             R.drawable.hg_3e_ost,
-            "Bild 4",
+            "Auf dieser Etage befinden sich der Informatikraum, verschiedene Lehrräume sowie die Säle: Euro Engineering, FISIA Babcock und Unitechnik.",
             "Hauptgebäude 3. Etage (Ost)"
         ),
 
         ImageData(
             R.drawable.hg_eg_west,
-            "Bild 5",
+            "Die Räumlichkeiten für Produktentwicklung, Produktion und Qualität sind auf dieser Etage zu finden.",
             "Hauptgebäude Erdgeschoss (West)"
         ),
 
         ImageData(
             R.drawable.hg_1e_west,
-            "Bild 6",
+            "Die Etage beherbergt die Bereiche Automation & Industrial IT, Werkstoffkunde und angewandte Mathematik sowie verschiedene Lehrräume.",
             "Hauptgebäude 1. Etage (West)"
         ),
 
         ImageData(
             R.drawable.hg_2e_west,
-            "Bild 7",
+            "Die folgenden Räume befinden sich auf dieser Etage: Physik, Informatik, Elektronik & Information Engineering, das Betriebswirtschaftliche Institut Gummersbach sowie verschiedene Lehrräume.",
             "Hauptgebäude 2. Etage (West)"
         ),
 
         ImageData(
             R.drawable.hg_3e_west,
-            "Bild 8",
+            "Die Etage beherbergt die Räume Informatik, Distance Learning & Further Education sowie diverse Lehrräume.",
             "Hauptgebäude 3. Etage (West)"
         ),
 
         ImageData(
             R.drawable.gb_b_eg,
-            "Bild 9",
+            "Die genannten Räume befinden sich auf dieser Etage: Mensa, Großhörsäle, FERCHAU Saal, BPW Saal und Physik.",
             "Gebäude B Erdgeschoss"
         ),
 
         ImageData(
             R.drawable.gb_b_1e,
-            "Bild 10",
+            "Die Räumlichkeiten auf dieser Etage umfassen die Hochschulbibliothek, Großhörsäle und den OPITZ CONSULTING Saal.",
             "Gebäude B 1.Etage)"
         ),
 
