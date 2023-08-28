@@ -2,7 +2,10 @@ package com.example.campnavfinal.mvvm
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
@@ -16,6 +19,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.DismissDirection
 import androidx.compose.material.DismissValue
 import androidx.compose.material.ExperimentalMaterialApi
@@ -42,8 +46,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.example.campnavfinal.screens.home.AddNote
@@ -65,19 +73,45 @@ fun HomeTodoView(viewModel: MainViewModel) {
             TopAppBar(
                 title = {
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.note),
-                        contentDescription = "Logo",
-                        modifier = Modifier.size(24.dp)
-                    )
-                    Text("Notes", modifier = Modifier.padding(start = 8.dp))
-                }
+                        Icon(
+                            painter = painterResource(id = R.drawable.note),
+                            contentDescription = "Logo",
+                            modifier = Modifier.size(28.dp)
+                        )
+                        Text(
+                            "Notes",
+                            modifier = Modifier.padding(start = 10.dp),
+                            style = TextStyle(
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                            )
+                        )
+                    }
                 },
-                backgroundColor = Color(0xFF89CFF0),
-                contentColor = MaterialTheme.colors.onPrimary
+                backgroundColor = Color(0xFF89CFF0).copy(alpha = 0.8f),
+                contentColor = Color.Black
             )
         },
-        content = {
+        content = { padding ->
+            Box(
+                modifier = Modifier.fillMaxSize()
+            ) {
+                // Hintergrundbild für den HomeScreen
+                Image(
+                    painter = painterResource(id = R.drawable.logo2),
+                    contentDescription = "Hintergrundbild",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.FillBounds
+                )
+
+                // Overlay-Hintergrund mit reduziertem Alpha-Wert
+                Box(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color.Black.copy(alpha = 0.4f))
+                )
+
+
             Column(
                 modifier = Modifier
                     .fillMaxSize()
@@ -161,13 +195,19 @@ fun HomeTodoView(viewModel: MainViewModel) {
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
                     Button(
-                        onClick = { viewModel.deleteAllRecords() }
-                    ) {
+                        onClick = { viewModel.deleteAllRecords() },
+                                colors = ButtonDefaults.buttonColors(
+                                backgroundColor = Blue2
+                    )
+                    ){
                         Text("Delete All")
                     }
                     Button(
-                        onClick = { popupControl = true }
-                    ) {
+                        onClick = { popupControl = true },
+                        colors = ButtonDefaults.buttonColors(
+                            backgroundColor = Blue2
+                    )
+                    ){
                         Text("Add Note")
                     }
                 }
@@ -187,9 +227,13 @@ fun HomeTodoView(viewModel: MainViewModel) {
                     }
                 }
             }
+
+
+}
         }
     )
 }
+
 
 
 /** -----------------------------------------------------------------------------------------------*
