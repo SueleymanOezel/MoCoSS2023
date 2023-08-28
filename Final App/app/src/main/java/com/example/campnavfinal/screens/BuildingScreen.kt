@@ -86,7 +86,7 @@ fun BuildingScreen() {
         ImageData(
             R.drawable.hg_eg_ost,
             "Bild 1",
-            "Hauptgebäude Erdgeschoss (Ost)"
+            "Hauptgebäude Erdgeschoss (Ost)t"
         ),
 
         ImageData(
