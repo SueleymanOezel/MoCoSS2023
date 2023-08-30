@@ -15,7 +15,7 @@ import androidx.compose.ui.unit.dp
 import com.example.campnavfinal.database.home.TodoItem
 
 @Composable
-fun TodoItemRow(
+fun NoteItemRow(
     item: TodoItem,
     todoListState: State<List<TodoItem>>,
     viewModel: MainViewModel

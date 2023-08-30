@@ -26,7 +26,6 @@ import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.FractionalThreshold
 import androidx.compose.material.Icon
 import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.SwipeToDismiss
 import androidx.compose.material.Text
@@ -56,14 +55,13 @@ import androidx.compose.ui.window.Popup
 import androidx.compose.ui.window.PopupProperties
 import com.example.campnavfinal.screens.home.AddNote
 import com.example.campnavfinal.R
-import com.example.campnavfinal.ui.theme.Blue1
 import com.example.campnavfinal.ui.theme.Blue2
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
-fun HomeTodoView(viewModel: MainViewModel) {
+fun HomeNoteView(viewModel: MainViewModel) {
     val todoListState = viewModel.todoListFlow.collectAsState(listOf())
     val lazyListState = rememberLazyListState()
     val scope = rememberCoroutineScope()
@@ -128,8 +126,10 @@ fun HomeTodoView(viewModel: MainViewModel) {
                     TextField(
                         value = searchNotes,
                         onValueChange = { searchNotes = it },
-                        label = { Text("Suchen...") },
-                        modifier = Modifier.weight(1f)
+                        label = { Text("Search...") },
+                        modifier = Modifier
+                            .weight(1f)
+                            .background(Color.LightGray)
                     )
                     IconButton(
                         onClick = { viewModel.searchRecords(searchNotes) },
@@ -182,7 +182,7 @@ fun HomeTodoView(viewModel: MainViewModel) {
                                     SwipeBackground(dismissState)
                                 },
                                 dismissContent = {
-                                    TodoItemRow(item, todoListState, viewModel)
+                                    NoteItemRow(item, todoListState, viewModel)
                                 }
                             )
                         }

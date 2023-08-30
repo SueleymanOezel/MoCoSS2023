@@ -33,11 +33,14 @@ import com.example.campnavfinal.mvvm.MainViewModel
 
 
 @Composable
-fun AddNote(closeRecord: () -> Unit, viewModel: MainViewModel) {
+fun AddNote(
+    closeRecord: () -> Unit,
+    viewModel: MainViewModel
+) {
     Surface(
         border = BorderStroke( 1.dp, MaterialTheme.colors.secondary),
         shape = RoundedCornerShape(8.dp),
-        color = Color(0x54EEEEEE),
+        color = Color(0xC4DAD8D8),
     ) {
         Column(
             modifier = Modifier.padding(24.dp),
@@ -50,15 +53,7 @@ fun AddNote(closeRecord: () -> Unit, viewModel: MainViewModel) {
                 onValueChange = { titleText = it },
                 label = { Text("Note") }
             )
-            Row(verticalAlignment = Alignment.CenterVertically) {
-                Text(text = "Urgency:")
-                Checkbox(
-                    checked = checkBoxStatus,
-                    onCheckedChange = {
-                        checkBoxStatus = !checkBoxStatus
-                    }
-                )
-            }
+
             Spacer(modifier = Modifier.height(32.dp))
             TextButton(onClick = {
                 if (titleText != "") {

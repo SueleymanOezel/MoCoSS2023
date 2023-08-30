@@ -88,6 +88,7 @@ class MainViewModel(
 
 
     fun addRecord(titleText: String, urgency: Boolean, postInsert: (() -> Unit)? = null) {
+        viewModelScope.launch(Dispatchers.IO) {  }
         val id = todoList.lastOrNull()?.id ?: -1
         val todoItem = TodoItem(id + 1, titleText, urgency)
         viewModelScope.launch(Dispatchers.IO) {

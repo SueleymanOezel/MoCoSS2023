@@ -13,6 +13,9 @@ import com.google.zxing.DecodeHintType
 import com.google.zxing.MultiFormatReader
 import com.google.zxing.PlanarYUVLuminanceSource
 import com.google.zxing.common.HybridBinarizer
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /*
 
@@ -60,7 +63,7 @@ class BarCodeAnalyser(
 
 
 class QRCodeAnalyzer(
-    private val onQrCodeScanned: (String) -> Unit
+    private val scannedQrCode: (String) -> Unit
 ) : ImageAnalysis.Analyzer {
 
     private val supportedImageFormats = listOf(
@@ -71,9 +74,9 @@ class QRCodeAnalyzer(
 
     override fun analyze(image: ImageProxy) {
         if (image.format in supportedImageFormats) {
-            val bytes = image.planes.first().buffer.toByteArray()
-            val source = PlanarYUVLuminanceSource(
-                bytes,
+            val imageBuffer = image.planes.first().buffer.toByteArray()
+            val luminanceSource = PlanarYUVLuminanceSource(
+                imageBuffer,
                 image.width,
                 image.height,
                 0,
@@ -82,22 +85,24 @@ class QRCodeAnalyzer(
                 image.height,
                 false
             )
-            val binaryBmp = BinaryBitmap(HybridBinarizer(source))
-            try {
-                val result = MultiFormatReader().apply {
-                    setHints(
-                        mapOf(
-                            DecodeHintType.POSSIBLE_FORMATS to arrayListOf(
-                                BarcodeFormat.QR_CODE
+            val binaryBmp = BinaryBitmap(HybridBinarizer(luminanceSource))
+            CoroutineScope(Dispatchers.IO).launch {
+                try {
+                    val result = MultiFormatReader().apply {
+                        setHints(
+                            mapOf(
+                                DecodeHintType.POSSIBLE_FORMATS to arrayListOf(
+                                    BarcodeFormat.QR_CODE
+                                )
                             )
                         )
-                    )
-                }.decode(binaryBmp)
-                onQrCodeScanned(result.text) // Übergeben Sie den decodierten Inhalt des QR-Codes an die Callback-Funktion
-            } catch (e: Exception) {
-                e.printStackTrace()
-            } finally {
-                image.close()
+                    }.decode(binaryBmp)
+                    scannedQrCode(result.text) // Übergeben des decodierten Inhalt des QR-Codes an die Callback-Funktion
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                } finally {
+                    image.close()
+                }
             }
         }
     }

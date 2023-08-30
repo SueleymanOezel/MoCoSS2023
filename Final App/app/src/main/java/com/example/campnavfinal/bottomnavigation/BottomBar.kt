@@ -5,13 +5,6 @@ import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.LocationOn
-import androidx.compose.material.icons.filled.Notifications
-import androidx.compose.material.icons.filled.Person
-import androidx.compose.material.icons.filled.Place
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -47,23 +40,30 @@ fun BottomNavigationBar(
     // Liste der Navigationspunkte
     val items = listOf(
 
+        // Navigationspunkt für den HomeScreen
         BottomItem(
             name = "Home",
             route = "home",
             icon = R.drawable.home
         ),
+
+        // Navigationspunkt für den ProfileScreen
         BottomItem(
             name = "Profile",
             route = "profile",
             icon = R.drawable.ic_person
 
             ),
+
+        // Navigationspunkt für den NavigationScreen
         BottomItem(
             name = "Navigation",
             route = "navigation",
             icon = R.drawable.room
 
             ),
+
+        // Navigationspunkt für den BuildingScreen
         BottomItem(
             name = "Building",
             route = "building",
@@ -71,6 +71,7 @@ fun BottomNavigationBar(
 
             ),
 
+        // Navigationspunkt für den MapsScreen
         BottomItem(
             name = "Maps",
             route = "maps",

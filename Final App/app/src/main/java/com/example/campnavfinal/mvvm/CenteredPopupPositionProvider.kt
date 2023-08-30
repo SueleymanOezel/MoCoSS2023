@@ -17,20 +17,22 @@ class CenteredPopupPositionProvider(
         layoutDirection: LayoutDirection,
         popupContentSize: IntSize
     ): IntOffset {
-        val horizontalPosition = calculateHorizontalPosition(windowSize, popupContentSize)
-        val verticalPosition = calculateVerticalPosition(windowSize, popupContentSize)
+        val horizontalPosition = calcHorizontalPos(windowSize, popupContentSize)
+        val verticalPosition = calcVerticalPos(windowSize, popupContentSize)
 
         return IntOffset(horizontalPosition + horizontalOffset, verticalPosition + verticalOffset)
     }
 
-    private fun calculateHorizontalPosition(windowSize: IntSize, popupContentSize: IntSize): Int {
+    // Berechnung der horizontalen Position
+    private fun calcHorizontalPos(windowSize: IntSize, popupContentSize: IntSize): Int {
         val windowWidth = windowSize.width
         val popupWidth = popupContentSize.width
 
         return (windowWidth - popupWidth) / 2
     }
 
-    private fun calculateVerticalPosition(windowSize: IntSize, popupContentSize: IntSize): Int {
+    // Berechnung der vertikalen Position
+    private fun calcVerticalPos(windowSize: IntSize, popupContentSize: IntSize): Int {
         val windowHeight = windowSize.height
         val popupHeight = popupContentSize.height
 

@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -74,11 +75,12 @@ fun NavigationScreen(navController: NavHostController) {
             // UI-Elemente der Startseite
             Column(modifier = Modifier.padding(20.dp)) {
 
+                
                 // Titel und Willkommensnachricht bei Start der App ("Deckblatt")
                 Text(
-                    text = "Navigation Screen",
+                    text = "Navigation zu den Räumen",
                     style = MaterialTheme.typography.h1,
-                    fontSize = 32.sp,
+                    fontSize = 24.sp,
                     color = Color.Black,
                     fontWeight = FontWeight.Bold
                 )
@@ -97,7 +99,7 @@ fun NavigationScreen(navController: NavHostController) {
                 Image(
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = null,
-                    modifier = Modifier.size(225.dp)
+                    modifier = Modifier.size(190.dp)
                 )
             }
 

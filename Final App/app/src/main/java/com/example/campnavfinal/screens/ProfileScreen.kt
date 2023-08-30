@@ -47,6 +47,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.campnavfinal.R
+import com.example.campnavfinal.mvvm.ImageData
 
 
 data class User(
@@ -87,6 +88,11 @@ fun ProfileScreen() {
         topBar = {
             TopAppBar(
                 title = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_person),
+                        contentDescription = "Logo",
+                        modifier = Modifier.size(28.dp)
+                    )
                     Text(
                         text = "Profil",
                         style = TextStyle(

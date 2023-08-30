@@ -12,7 +12,6 @@ import com.example.campnavfinal.database.room.RaumDao
 import com.example.campnavfinal.database.room.RaumDatabase
 import com.example.campnavfinal.database.room.RaumEntity
 import com.example.campnavfinal.mvvm.MainViewModel
-import com.example.campnavfinal.screens.ImageData
 import com.example.campnavfinal.ui.theme.CampNavFinalTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import kotlinx.coroutines.launch
@@ -29,6 +28,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         raumDao = (application as MyApplication).raumDao
 
         lifecycleScope.launch {

@@ -69,15 +69,8 @@ import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.campnavfinal.mvvm.ImageData
 import java.util.Locale
-
-
-// Datenklasse mit den Variablen für die Bilder
-data class ImageData(
-    val imageRes: Int,
-    val caption: String,
-    val title: String
-    )
 
 
 // Funktion für den Bildschirm, der den Gebäudeplan der TH Köln Campus GM enthält
@@ -167,7 +160,7 @@ fun BuildingScreen() {
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
                             painter = painterResource(id = R.drawable.building),
-                            contentDescription = "Logo",
+                            contentDescription = "Gebäude",
                             modifier = Modifier.size(28.dp)
                         )
                         Text(

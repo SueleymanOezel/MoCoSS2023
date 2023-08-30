@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
@@ -47,6 +48,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.campnavfinal.R
 import com.example.campnavfinal.ui.theme.Blue2
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /*
 // Vorschau für Einstellungen
@@ -73,8 +78,13 @@ fun MapsScreen(context: Context) {
         topBar = {
             TopAppBar(
                 title = {
+                    Icon(
+                        painter = painterResource(id = R.drawable.location),
+                        contentDescription = "Logo",
+                        modifier = Modifier.size(28.dp)
+                    )
                     Text(text = "Google Maps",
-                    style = TextStyle(
+                        style = TextStyle(
                         fontSize = 24.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color.Black
@@ -105,7 +115,8 @@ fun MapsScreen(context: Context) {
                             .padding(30.dp)
                             .clip(CircleShape)
                             .shadow(10.dp)
-                            .scale(1f, 1f),
+                            .scale(1f, 1f)
+                            .align(Alignment.CenterHorizontally),
                         contentScale = ContentScale.Crop  // Anpassung des Logos an den Kreis
                     )
 
@@ -157,7 +168,9 @@ fun MapsScreen(context: Context) {
 
                 Button(
                     onClick = {
-                        startNavigationFromMain(startPoint, destination, context)
+                        CoroutineScope(Dispatchers.Main).launch {
+                            startNavigationFromMain(startPoint, destination, context)
+                        }
                     },
                     modifier = Modifier.align(Alignment.CenterHorizontally)
                         .background(Blue2), // Hier setzen wir die Hintergrundfarbe
@@ -172,19 +185,23 @@ fun MapsScreen(context: Context) {
     )
 }
 
-fun startNavigationFromMain(startPoint: String, destination: String, context: Context) {
-    val gmmIntentUri = Uri.parse("google.navigation:q=$startPoint&daddr=$destination&mode=w")
-    val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-    mapIntent.setPackage("com.google.android.apps.maps")
+suspend fun startNavigationFromMain(startPoint: String, destination: String, context: Context) {
+    withContext(Dispatchers.IO) {
+        val gmmIntentUri = Uri.parse("google.navigation:q=$startPoint&daddr=$destination&mode=w")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
 
-    if (mapIntent.resolveActivity(context.packageManager) != null) {
-        context.startActivity(mapIntent)
-    } else {
-        Toast.makeText(
-            context,
-            "Google Maps ist auf diesem Gerät nicht installiert.",
-            Toast.LENGTH_SHORT
-        ).show()
+        if (mapIntent.resolveActivity(context.packageManager) != null) {
+            context.startActivity(mapIntent)
+        } else {
+            withContext(Dispatchers.Main) {
+                Toast.makeText(
+                    context,
+                    "Google Maps ist auf diesem Gerät nicht installiert.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+        }
     }
 }
 
