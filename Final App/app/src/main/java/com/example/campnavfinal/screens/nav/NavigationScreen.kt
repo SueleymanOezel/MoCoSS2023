@@ -11,7 +11,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -38,21 +37,27 @@ fun NavigationScreen(navController: NavHostController) {
 
 
     // Hintergrundfläche mit primärer Farbe
-    Surface(color = Color.Gray) {
+    Surface(
+        color = Color.Gray
+    ) {
+
         // Box-Container für die gesamte Startseite
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .drawBehind {
+
                     // Erstellen eines Pfads für die Hintergrundbezeichnung
                     val path = Path()
                     val x = size.width
                     val y = size.height
                     val center = size.center
                     path.apply {
+
                         // Linie von (0,0) nach (x, 0)
                         moveTo(0f, 0f)
                         lineTo(x, 0f)
+
                         // Kubische Bezier-Kurve zur Erzeugung der Wellenform
                         cubicTo(
                             x1 = x,
@@ -75,7 +80,7 @@ fun NavigationScreen(navController: NavHostController) {
             // UI-Elemente der Startseite
             Column(modifier = Modifier.padding(20.dp)) {
 
-                
+
                 // Titel und Willkommensnachricht bei Start der App ("Deckblatt")
                 Text(
                     text = "Navigation zu den Räumen",
@@ -124,6 +129,7 @@ fun NavigationScreen(navController: NavHostController) {
                 ) {
                     Text(text = "Go To Room")
                 }
+
                 Spacer(modifier = Modifier.size(18.dp)
                 )
 

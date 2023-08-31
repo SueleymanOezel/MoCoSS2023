@@ -414,7 +414,7 @@ class MainViewModel(
                     "\n\nVom Hintereingang des Hauptgebäudes laufen Sie hingegen zweimal die Treppen auf der rechten Seite hoch " +
                     "\nund dann ebenfalls rechts und dann links bis zum Raum vor dem Flur auf der linken Seite."
 
-            roomNumber == "2106"
+            roomNumber == "2107"
             -> "Raum $roomNumber \nWI-PC-Pool II" +
                     "\n\n\nDer WI-PC-Pool II befindet sich im Ost-Trakt des Hauptgebäudes auf der 2. Etage." +
                     "\nVom Haupteingang dea Hauptgebäudes gehen Sie nach links und laufen die Treppe eine Etage hoch. " +

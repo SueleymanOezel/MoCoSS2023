@@ -90,7 +90,7 @@ fun HomeNoteView(viewModel: MainViewModel) {
                 contentColor = Color.Black
             )
         },
-        content = { padding ->
+        content = {
             Box(
                 modifier = Modifier
                     .fillMaxSize()

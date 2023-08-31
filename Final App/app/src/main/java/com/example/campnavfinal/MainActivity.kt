@@ -4,13 +4,10 @@ package com.example.campnavfinal
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.compose.rememberNavController
 import com.example.campnavfinal.bottomnavigation.Navigation
 import com.example.campnavfinal.database.room.RaumDao
-import com.example.campnavfinal.database.room.RaumDatabase
-import com.example.campnavfinal.database.room.RaumEntity
 import com.example.campnavfinal.mvvm.MainViewModel
 import com.example.campnavfinal.ui.theme.CampNavFinalTheme
 import com.google.accompanist.permissions.ExperimentalPermissionsApi

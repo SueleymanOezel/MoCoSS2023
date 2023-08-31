@@ -2,8 +2,7 @@ package com.example.campnavfinal.database.home
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import com.example.campnavfinal.database.room.RaumDao
-import com.example.campnavfinal.database.room.RaumEntity
+
 
 
 /**

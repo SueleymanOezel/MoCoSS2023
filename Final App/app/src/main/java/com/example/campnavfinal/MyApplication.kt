@@ -1,14 +1,9 @@
 package com.example.campnavfinal
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.room.Room
-import androidx.room.RoomDatabase
-//import com.example.campnavfinal.database.home.AppDatabase
 import com.example.campnavfinal.database.home.TodoDatabase
-import com.example.campnavfinal.database.profile.UserDatabase
 import com.example.campnavfinal.database.room.RaumDatabase
-import com.example.campnavfinal.database.room.RaumDao
 
 
 
@@ -29,7 +24,6 @@ class MyApplication : Application() {
     val raumDao by lazy { raumDb.raumDao()}
 
 
-    val todoDao by lazy { todoDb.todoDao() }
 
 }
 

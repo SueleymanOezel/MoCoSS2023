@@ -10,6 +10,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -24,7 +25,6 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -53,16 +53,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-/*
-// Vorschau für Einstellungen
-@Preview
-@Composable
-fun MapsScreenPreview(){
-    MapsScreen()
-}
-
- */
-
 
 //OptIn: verwendete Material3-Bibliothek experimentell, Änderungen an der API können auftreten
 // ... (import-Anweisungen)
@@ -78,19 +68,25 @@ fun MapsScreen(context: Context) {
         topBar = {
             TopAppBar(
                 title = {
-                    Icon(
-                        painter = painterResource(id = R.drawable.location),
-                        contentDescription = "Logo",
-                        modifier = Modifier.size(28.dp)
-                    )
-                    Text(text = "Google Maps",
-                        style = TextStyle(
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Black
-                    )
-                    )
-                        },
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(4.dp)
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.location),
+                            contentDescription = "Logo",
+                            modifier = Modifier.size(28.dp)
+                        )
+                        Text(
+                            text = "Google Maps",
+                            style = TextStyle(
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Black
+                            )
+                        )
+                    }
+                },
                 backgroundColor = Color(0xFF89CFF0),
                 contentColor = Color.Black
             )
@@ -100,13 +96,13 @@ fun MapsScreen(context: Context) {
                 modifier = Modifier.fillMaxSize().background(Color.Gray),
                 contentAlignment = Alignment.Center
             ) {
-            Column(
-                modifier = Modifier.padding(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                horizontalAlignment = Alignment.CenterHorizontally // Zentrierung des Inhalts horizontal
-            ) {
-
-
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp)
+                        .fillMaxSize(),
+                    verticalArrangement = Arrangement.spacedBy(8.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
                     Image(
                         painter = painterResource(id = R.drawable.logo),
                         contentDescription = "Iconbild",
@@ -115,73 +111,70 @@ fun MapsScreen(context: Context) {
                             .padding(30.dp)
                             .clip(CircleShape)
                             .shadow(10.dp)
-                            .scale(1f, 1f)
                             .align(Alignment.CenterHorizontally),
-                        contentScale = ContentScale.Crop  // Anpassung des Logos an den Kreis
+                        contentScale = ContentScale.Crop
                     )
 
-                Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
 
-                Text(
-                    text = "Steinmüllerallee 1, 51643   Hauptgebäude ",
-                    style = TextStyle( fontSize = 16.sp ),
-                    textAlign = TextAlign.Start,
-                    modifier = Modifier.fillMaxWidth()
+                    Text(
+                        text = "Steinmüllerallee 1, 51643   Hauptgebäude ",
+                        style = TextStyle(fontSize = 16.sp),
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.fillMaxWidth()
                     )
 
-                Text(
+                    Text(
                         text = "Steinmüllerallee 2, 51643   Gebäude B, Mensa ",
-                style = TextStyle( fontSize = 16.sp ),
-                textAlign = TextAlign.Start,
-                modifier = Modifier.fillMaxWidth()
-                )
-                Text(
-                    text = "Steinmüllerallee 4, 51643   Hochschulbibliothek ",
-                    style = TextStyle( fontSize = 16.sp ),
-                    textAlign = TextAlign.Start,
-                    modifier = Modifier.fillMaxWidth()
-                )
+                        style = TextStyle(fontSize = 16.sp),
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.fillMaxWidth()
+                    )
+                    Text(
+                        text = "Steinmüllerallee 4, 51643   Hochschulbibliothek ",
+                        style = TextStyle(fontSize = 16.sp),
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
-                Text(
-                    text = "Steinmüllerallee 6, 51643   FERCHAU ",
-                    style = TextStyle( fontSize = 16.sp ),
-                    textAlign = TextAlign.Start,
-                    modifier = Modifier.fillMaxWidth()
-                )
+                    Text(
+                        text = "Steinmüllerallee 6, 51643   FERCHAU ",
+                        style = TextStyle(fontSize = 16.sp),
+                        textAlign = TextAlign.Start,
+                        modifier = Modifier.fillMaxWidth()
+                    )
 
+                    Spacer(modifier = Modifier.height(20.dp))
 
-                Spacer(modifier = Modifier.height(20.dp))
+                    TextField(
+                        value = startPoint,
+                        onValueChange = { startPoint = it },
+                        label = { Text("Startpunkt eingeben") }
+                    )
 
-                TextField(
-                    value = startPoint,
-                    onValueChange = { startPoint = it },
-                    label = { Text("Startpunkt eingeben") }
-                )
+                    TextField(
+                        value = destination,
+                        onValueChange = { destination = it },
+                        label = { Text("Ziel eingeben") }
+                    )
 
-                TextField(
-                    value = destination,
-                    onValueChange = { destination = it },
-                    label = { Text("Ziel eingeben") }
-                )
-
-
-
-                Button(
-                    onClick = {
-                        CoroutineScope(Dispatchers.Main).launch {
-                            startNavigationFromMain(startPoint, destination, context)
-                        }
-                    },
-                    modifier = Modifier.align(Alignment.CenterHorizontally)
-                        .background(Blue2), // Hier setzen wir die Hintergrundfarbe
-                    shape = MaterialTheme.shapes.medium,
-                    colors = ButtonDefaults.textButtonColors(contentColor = Color.White) // Textfarbe der Schaltfläche
-                ) {
-                    Text("Navigation starten")
+                    Button(
+                        onClick = {
+                            CoroutineScope(Dispatchers.Main).launch {
+                                startNavigationFromMain(startPoint, destination, context)
+                            }
+                        },
+                        modifier = Modifier
+                            .align(Alignment.CenterHorizontally)
+                            .background(Blue2),
+                        shape = MaterialTheme.shapes.medium,
+                        colors = ButtonDefaults.textButtonColors(contentColor = Color.White)
+                    ) {
+                        Text("Navigation starten")
+                    }
                 }
             }
         }
-    }
     )
 }
 
@@ -204,6 +197,7 @@ suspend fun startNavigationFromMain(startPoint: String, destination: String, con
         }
     }
 }
+
 
 
 @Preview
